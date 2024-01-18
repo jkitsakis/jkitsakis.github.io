@@ -1,1 +1,1 @@
-# jkitsakis.github.io
+# pelican_example
