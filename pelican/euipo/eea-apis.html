@@ -28,8 +28,8 @@
 
     <div class="entry-content">
       <h2><em>EUTM Search API</em></h2>
-<h3>URL PATH: ... /eop/eutm-search</h3>
-<h3><a href="/pelican/euipohttps://git.euipo.europa.eu/projects/EEA/repos/eutm-search-api/browse" target="_blank">BitBucket</a></h3>
+<h3>URL PATH: ... /eop/eutm-search/trademarks?</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-search-api/browse" target="_blank">BitBucket</a></h3>
 <ul>
 <li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
 <li><strong>PreProd:</strong> http://pp-api.test.oami.eu</li>
@@ -43,20 +43,22 @@
 <li><strong>AWS-Test:</strong> http://test-eutm-search-api.nonprod.aws.oami.eu</li>
 <li><strong>AWS-Prod:</strong> http://production-eutm-search-api.prod.aws.oami.eu</li>
 </ul>
+<p><em>Syntax</em></p>
 <blockquote>
-<p>trademarks?query=representatives.identifier==10014</p>
-<p>trademarks?query=status==REGISTERED,markFeature==FIGURATIVE&amp;page=0&amp;fields=trademarks(applicationNumber)&amp;sort=registrationDate:desc</p>
-<p>trademarks?query=status==REGISTERED,markFeature==FIGURATIVE&amp;page=0&amp;fields=trademarks(applicationNumber,status)&amp;sort=status:asc,applicationNumber:asc</p>
-<p>trademarks?query=representatives.identifier==10014 and (applicantReference==IF/mb or applicationNumber==IF/mb)&amp;page=0&amp;sort=applicationDate:desc</p>
-<p>trademarks?query=applicantReference==IF/mb or applicationNumber==IF/mb&amp;page=0&amp;sort=applicationDate:desc</p>
-<p>trademarks?page=0&amp;size=25&amp;query=markBasis==EU_TRADEMARK and applicationNumber=='<em>012345</em>'&amp;sort=applicationDate:desc</p>
-<p>trademarks?query=markBasis==EU_TRADEMARK and status=in=(ACCEPTED)&amp;page=0&amp;sort=applicationDate:desc&amp;size=1000</p>
-<p>trademarks?query=markBasis==INTERNATIONAL_TRADEMARK and status=in=(ACCEPTED,REGISTERED)&amp;page=0&amp;sort=applicationDate:desc&amp;size=1000</p>
-<p>trademarks?query=representatives.identifier==10014 and markFeature==FIGURATIVE&amp;page=0&amp;sort=applicationDate:desc&amp;size=10</p>
-<p>trademarks?query=(markBasis==INTERNATIONAL_TRADEMARK and niceClasses=in=(1,2,3)) and representatives.identifier==10014&amp;page=0&amp;size=25&amp;sort=applicationDate:desc</p>
+<p>query=representatives.identifier==10014</p>
+<p>query=status==REGISTERED,markFeature==FIGURATIVE&amp;page=0&amp;fields=trademarks(applicationNumber)&amp;sort=registrationDate:desc</p>
+<p>query=status==REGISTERED,markFeature==FIGURATIVE&amp;page=0&amp;fields=trademarks(applicationNumber,status)&amp;sort=status:asc,applicationNumber:asc</p>
+<p>query=representatives.identifier==10014 and (applicantReference==IF/mb or applicationNumber==IF/mb)&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>query=applicantReference==IF/mb or applicationNumber==IF/mb&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>page=0&amp;size=25&amp;query=markBasis==EU_TRADEMARK and applicationNumber=='<em>012345</em>'&amp;sort=applicationDate:desc</p>
+<p>query=markBasis==EU_TRADEMARK and status=in=(ACCEPTED)&amp;page=0&amp;sort=applicationDate:desc&amp;size=1000</p>
+<p>query=markBasis==INTERNATIONAL_TRADEMARK and status=in=(ACCEPTED,REGISTERED)&amp;page=0&amp;sort=applicationDate:desc&amp;size=1000</p>
+<p>query=representatives.identifier==10014 and markFeature==FIGURATIVE&amp;page=0&amp;sort=applicationDate:desc&amp;size=10</p>
+<p>query=(markBasis==INTERNATIONAL_TRADEMARK and niceClasses=in=(1,2,3)) and representatives.identifier==10014&amp;page=0&amp;size=25&amp;sort=applicationDate:desc</p>
 <p>trademarks/:applicationNumber</p>
-<p>trademarks/:applicationNumber/image</p>
+<p>trademarks/:applicationNumber/image </p>
 </blockquote>
+<hr>
 <h2><em>Eutm Filing Api</em></h2>
 <h3>URL PATH: ... /eop/eutm-filing/</h3>
 <ul>
@@ -78,11 +80,11 @@
 </section>
 
 
-        <footer id="contentinfo" class="body">
+      <!--  <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Proudly powered by <a rel="nofollow" href="/pelican/euipohttps://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="/pelican/euipohttps://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-        </footer><!-- /#contentinfo -->
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address>&lt;!&ndash; /#about &ndash;&gt;
+        </footer> /#contentinfo -->
 
 </body>
 </html>
