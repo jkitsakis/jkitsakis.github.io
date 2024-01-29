@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>EOPWA APIs</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="EOPWA APIs : Appeals Search API, Communications Search API, Designs Search API, Drafts Search API, Feedback Search API, Interpartes Search API" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">EUIPO dev</a></h1>
+                <nav><ul>
+                    <li><a href="/pages/ui-links.html">UI Links</a></li>
+                    <li class="active"><a href="/category/rest-apis.html">Rest APIs</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/eopwa-apis.html" rel="bookmark"
+           title="Permalink to EOPWA APIs">EOPWA APIs</a></h1>
+    </header>
+
+    <div class="entry-content">
+      <h3>Appeals Search API</h3>
+<h3>URL PATH: ... /eop/appeals-search</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/appeals-search-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-appeals-search-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-appeals-search-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-appeals-search-api.prod.aws.oami.eu </li>
+</ul>
+<blockquote>
+<p>... ?query=appealNumber=='R00*'&amp;roleKind=CLAIMANT&amp;page=0&amp;size=25&amp;sort=appealDate:desc</p>
+</blockquote>
+<h3>Communications Search API</h3>
+<h3>URL PATH: ... /eop/communications/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/communications-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-communications-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-communications-api.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> http://production-communications-api.prod.aws.oami.eu </li>
+</ul>
+<h3>Designs Search API</h3>
+<h3>URL PATH: ... /eop/design-search</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/design-search-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-design-search-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-design-search-api.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> http://production-design-search-api.prod.aws.oami.eu </li>
+</ul>
+<blockquote>
+<p>... ?query=designNumber!=9*&amp;size=10&amp;page=0&amp;sort=applicationDate:desc</p>
+</blockquote>
+<h3>Drafts Search API</h3>
+<h3>URL PATH: ... /eop/drafts/<strong>eutms</strong>?size=10&amp;page=10&amp;sort=creationDate:DESC</h3>
+<h3>URL PATH: ... /eop/drafts/<strong>designs</strong>?size=10&amp;page=10&amp;sort=creationDate:DESC</h3>
+<h3>URL PATH: ... /eop/drafts/<strong>interpartes</strong>?size=10&amp;page=10&amp;sort=creationDate:DESC</h3>
+<h3>URL PATH: ... /eop/drafts/<strong>other</strong>?size=10&amp;page=10&amp;sort=creationDate:DESC</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/drafts-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-drafts-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-drafts-api.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> http://production-drafts-api.prod.aws.oami.eu   </li>
+</ul>
+<h3>Feedback Search API</h3>
+<h3>URL PATH: ... /eop/feedback/surveys/:indentifier</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/feedback-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-feedback-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-feedback-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-feedback-api.prod.aws.oami.eu   </li>
+</ul>
+<h3>Interpartes Search API</h3>
+<h3>URL PATH: ... /eop/interpartes-search/oppositions?query=opponentRepresentatives.identifier==10014&amp;size=100&amp;page=0&amp;sort=oppositionDate:desc</h3>
+<h3>URL PATH: ... /eop/interpartes-search/cancellations?page=0&amp;sort=cancellationNumber:desc&amp;size=160</h3>
+<h3>URL PATH: ... /eop/interpartes-search/invalidities?query=claimantRepresentatives.name=="HO+*"&amp;size=100&amp;page=0&amp;sort=invalidityDate:desc</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/interpartes-search-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-interpartes-search-api.nonprod.aws.oami.eu  </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-interpartes-search-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-interpartes-search-api.prod.aws.oami.eu</li>
+</ul>
+<h3>Notes Search API</h3>
+<h3>URL PATH: ... /eop/notes/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/notes-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-notes-api.nonprod.aws.oami.eu   </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-notes-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-notes-api.prod.aws.oami.eu </li>
+</ul>
+<h3>Pre-Assesement Search API</h3>
+<h3>URL PATH: ... /eop/pre-assessment/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/pre-assessment-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-pre-assessment-api.nonprod.aws.oami.eu  </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-pre-assessment-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-pre-assessment-api.prod.aws.oami.eu </li>
+</ul>
+<h3>Settings Search API</h3>
+<h3>URL PATH: ... /eop/settings/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/settings-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-settings-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-settings-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-settings-api.prod.aws.oami.eu </li>
+</ul>
+<h3>User Profile API</h3>
+<h3>URL PATH: ...  /eop/user-profile/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPWA/repos/user-profile-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu </li>
+<li>
+<p><strong>Test:</strong> http://test-api.test.oami.eu </p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-user-profile-api.nonprod.aws.oami.eu </p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-user-profile-api.nonprod.aws.oami.eu </li>
+<li><strong>AWS-Prod:</strong> http://production-user-profile-api.prod.aws.oami.eu </li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

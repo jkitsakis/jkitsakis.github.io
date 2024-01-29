@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>EOPW APIs</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="EOPW APIs : Website BE, Admin Tool, Story Block" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">EUIPO dev</a></h1>
+                <nav><ul>
+                    <li><a href="/pages/ui-links.html">UI Links</a></li>
+                    <li class="active"><a href="/category/rest-apis.html">Rest APIs</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/eopw-apis.html" rel="bookmark"
+           title="Permalink to EOPW APIs">EOPW APIs</a></h1>
+    </header>
+
+    <div class="entry-content">
+      <h2><em>Website BE</em></h2>
+<h3>URL PATH: ... /portal/app/api/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> https://integration.euipo.europa.eu</li>
+<li>
+<p><strong>PreProd:</strong> https://pp.euipo.europa.eu</p>
+</li>
+<li>
+<p><strong>Prod:</strong> https://www.euipo.europa.eu</p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> https://dev-eop-website-backend.nonprod.aws.oami.eu</p>
+</li>
+<li><strong>AWS-Test:</strong> https://test-eop-website-backend.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> https://production-eop-website-backend.nonprod.aws.oami.eu</li>
+</ul>
+<blockquote>
+<p>/templates?page=0&amp;size=10&amp;sort=creationDate:desc</p>
+<p>/templates/:templateIdentifier/notes </p>
+<p>/drafts/designs</p>
+<p>/drafts/interpartes?keyword&amp;size=5&amp;page=0&amp;sort=draftdate:DESC</p>
+<p>/drafts/interpartes?page=0&amp;size=5&amp;sort=draftdate%3Adesc</p>
+<p>/drafts/other?keyword&amp;size=5&amp;page=0&amp;sort=draftdate:DESC</p>
+<p>/portfolio/trademarks?keyword=IF/mb&amp;size=10&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>/portfolio/trademarks?query=markBasis==EU_TRADEMARK and status=in=(ACCEPTANCE_PENDING,ACCEPTED)&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>/portfolio/oppositions?size=10&amp;roleKind=CLAIMANT&amp;page=0&amp;sort=oppositionDate:desc</p>
+<p>/portfolio/oppositions?roleKind=CLAIMANT&amp;size=10&amp;page=0&amp;sort=oppositionDate:desc&amp;query=status=in=(ADMISSIBILITY_CHECK)</p>
+<p>/portfolio/oppositions?size=50&amp;page=0&amp;roleKind=CLAIMANT</p>
+<p>/portfolio/trademarks?keyword=IF/mb&amp;size=10&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>/portfolio/trademarks/:applicationNumber</p>
+<p>/portfolio/oppositions/:oppositionId</p>
+<p>/portfolio/cancellations?size=20&amp;page=0&amp;roleKind=CLAIMANT</p>
+<p>/portfolio/designs?page=0&amp;sort=applicationDate:desc&amp;size=20&amp;query=keyword==DM416DR</p>
+<p>/portfolio/designs?size=200&amp;page=0&amp;query=designNumber!=0</p>
+<p>/portfolio/designs?size=200&amp;page=0&amp;query=designNumber==000094560-0006</p>
+<p>/portfolio/designs/001754292-0001/comments</p>
+<p>/portfolio/appeals?page=0&amp;size=25&amp;roleKind=CLAIMANT&amp;query=appealDate%3E%3D2022-05-01&amp;sort=appealDate%3Adesc</p>
+<p>/userprofile/:documentId/export</p>
+<p>/surveys/:identifier</p>
+<p>/surveys/:identifier/answer</p>
+</blockquote>
+<h2><em>Admin Tool</em></h2>
+<h3>URL PATH: ... /eop/admintool/app/api/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-admintool-backend/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> https://integration.euipo.europa.eu</li>
+<li>
+<p><strong>PreProd:</strong> https://pp.euipo.europa.eu</p>
+</li>
+<li>
+<p><strong>Prod:</strong> https://www.euipo.europa.eu</p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> https://dev-eop-website-backend.nonprod.aws.oami.eu</p>
+</li>
+<li><strong>AWS-Test:</strong> https://test-eop-website-backend.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> https://production-eop-website-backend.nonprod.aws.oami.eu</li>
+</ul>
+<h2><em>Story Blok</em></h2>
+<h3>URL PATH: ... /eop/storyblok/</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-storyblok-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li></li>
+<li><strong>Integration:</strong> https://integration.euipo.europa.eu</li>
+<li>
+<p><strong>PreProd:</strong> https://pp.euipo.europa.eu</p>
+</li>
+<li>
+<p><strong>Prod:</strong> https://www.euipo.europa.eu</p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> https://dev-eop-website-backend.nonprod.aws.oami.eu</p>
+</li>
+<li><strong>AWS-Test:</strong> https://test-eop-website-backend.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> https://production-eop-website-backend.nonprod.aws.oami.eu</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

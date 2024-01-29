@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content="Pelican" />
+        <title>EEA APIs</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+        <meta name="description" content="EEA APIs : EUTM Search API, Eutm Filing Api" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">EUIPO dev</a></h1>
+                <nav><ul>
+                    <li><a href="/pages/ui-links.html">UI Links</a></li>
+                    <li class="active"><a href="/category/rest-apis.html">Rest APIs</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/eea-apis.html" rel="bookmark"
+           title="Permalink to EEA APIs">EEA APIs</a></h1>
+    </header>
+
+    <div class="entry-content">
+      <h2><em>EUTM Search API</em></h2>
+<h3>URL PATH: ... /eop/eutm-search</h3>
+<h3><a href="https://git.euipo.europa.eu/projects/EEA/repos/eutm-search-api/browse" target="_blank">BitBucket</a></h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu</li>
+<li><strong>Test:</strong> http://test-eutm-api.test.oami.eu</li>
+<li>
+<p><strong>Prod:</strong> http://api.prod.oami.eu</p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-eutm-search-api.nonprod.aws.oami.eu</p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-eutm-search-api.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> http://production-eutm-search-api.prod.aws.oami.eu</li>
+</ul>
+<blockquote>
+<p>trademarks?query=representatives.identifier==10014</p>
+<p>trademarks?query=status==REGISTERED,markFeature==FIGURATIVE&amp;page=0&amp;fields=trademarks(applicationNumber)&amp;sort=registrationDate:desc</p>
+<p>trademarks?query=status==REGISTERED,markFeature==FIGURATIVE&amp;page=0&amp;fields=trademarks(applicationNumber,status)&amp;sort=status:asc,applicationNumber:asc</p>
+<p>trademarks?query=representatives.identifier==10014 and (applicantReference==IF/mb or applicationNumber==IF/mb)&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>trademarks?query=applicantReference==IF/mb or applicationNumber==IF/mb&amp;page=0&amp;sort=applicationDate:desc</p>
+<p>trademarks?page=0&amp;size=25&amp;query=markBasis==EU_TRADEMARK and applicationNumber=='<em>012345</em>'&amp;sort=applicationDate:desc</p>
+<p>trademarks?query=markBasis==EU_TRADEMARK and status=in=(ACCEPTED)&amp;page=0&amp;sort=applicationDate:desc&amp;size=1000</p>
+<p>trademarks?query=markBasis==INTERNATIONAL_TRADEMARK and status=in=(ACCEPTED,REGISTERED)&amp;page=0&amp;sort=applicationDate:desc&amp;size=1000</p>
+<p>trademarks?query=representatives.identifier==10014 and markFeature==FIGURATIVE&amp;page=0&amp;sort=applicationDate:desc&amp;size=10</p>
+<p>trademarks?query=(markBasis==INTERNATIONAL_TRADEMARK and niceClasses=in=(1,2,3)) and representatives.identifier==10014&amp;page=0&amp;size=25&amp;sort=applicationDate:desc</p>
+<p>trademarks/:applicationNumber</p>
+<p>trademarks/:applicationNumber/image</p>
+</blockquote>
+<h2><em>Eutm Filing Api</em></h2>
+<h3>URL PATH: ... /eop/eutm-filing/</h3>
+<ul>
+<li><strong>Integration:</strong> http://int-api.dev.oami.eu</li>
+<li><strong>PreProd:</strong> http://pp-api.test.oami.eu</li>
+<li><strong>Test:</strong> http://test-eutm-api.test.oami.eu</li>
+<li>
+<p><strong>Prod:</strong> http://api.prod.oami.eu</p>
+</li>
+<li>
+<p><strong>AWS-Dev:</strong> http://dev-eutm-filing-api.nonprod.aws.oami.eu</p>
+</li>
+<li><strong>AWS-Test:</strong> http://test-eutm-filing-api.nonprod.aws.oami.eu</li>
+<li><strong>AWS-Prod:</strong> http://production-eutm-filing-api.prod.aws.oami.eu</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
