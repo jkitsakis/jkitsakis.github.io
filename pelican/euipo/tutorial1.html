@@ -29,49 +29,41 @@
     </header>
 
     <div class="entry-content">
-      <p>**How to Find API URLs for AWS </p>
+      <p>**How to Find API URLs for AWS (e.g. for test env)</p>
 <ul>
 <li>
 <p>designs search</p>
 <ol>
 <li>
-<p>goto manifests-website-apis\helm\config\design-search-api\application-test.yaml : prefix: test- , aws: nonprod.aws.oami.eu</p>
+<p>goto <strong>manifests</strong>-website-apis<strong>\helm\config\design-search-api\application-test.yaml</strong> :<br>
+<strong>prefix:</strong> test- , <strong>aws:</strong> nonprod.aws.oami.eu</p>
 </li>
 <li>
-<p>goto manifests-website-apis\helm\values.yaml : design-search-api: name:'design-search-api' and path: '/eop/design-search/'</p>
-</li>
-<li>
-<p>so : http://test-design-search-api.nonprod.aws.oami.eu/eop/design-search/</p>
+<p>goto manifests-website-apis<strong>\helm\values.yaml</strong> :<br>
+... design-search-api: <strong>name:</strong> 'design-search-api' and <strong>path:</strong> '/eop/design-search/'  </p>
 </li>
 </ol>
+<p><strong>so</strong> : http://test-design-search-api.nonprod.aws.oami.eu/eop/design-search/</p>
 </li>
 <li>
 <p>website-be</p>
 <ol>
 <li>
-<p>goto manifests-website-apis\helm\config\design-search-api\application-dev.yaml : prefix: dev- , aws: nonprod.aws.oami.eu</p>
+<p>goto <strong>manifests-website-apis\helm\config\design-search-api\application-dev.yaml</strong> :<br>
+<strong>prefix:</strong> dev- , <strong>aws:</strong> nonprod.aws.oami.eu</p>
 </li>
 <li>
-<p>goto manifests-website-apis\helm\values.yaml : 
+<p>goto <strong>manifests-website-apis\helm\values.yaml</strong> :<br>
+    ...
     website-backend:<br>
         name:'website-backend:'<br>
-        networking.path: '/portal/app/api/'</p>
-</li>
-<li>
-<p>so : http://test-design-search-api.nonprod.aws.oami.eu/eop/design-search/</p>
+        networking.path: '/portal/app/api/'
+    ...  </p>
 </li>
 </ol>
+<p><strong>so</strong> : http://test-design-search-api.nonprod.aws.oami.eu/eop/design-search/</p>
 </li>
 </ul>
-<p><strong>Authentication links</strong></p>
-<ul>
-<li>Integration : </li>
-</ul>
-<p>Auth.openidconnect.issuerUri: https://auth.test.euipo.europa.eu/t/euipo.europa.eu/oauth2/token</p>
-<ul>
-<li>Other</li>
-</ul>
-<p>openidconnect.issuerUri: https://pp.euipo.europa.eu/cas-server-webapp/oidc</p>
     </div><!-- /.entry-content -->
 
   </article>
