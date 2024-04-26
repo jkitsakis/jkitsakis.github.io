@@ -14,8 +14,9 @@ html {
 
 /* Titles */
 h1 { text-transform: uppercase }
+/*h2 { font-size: 25px; }*/
 h1, h2 { 
-	font-weight: normal; 
+  font-weight: normal;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -96,8 +97,10 @@ article ol.posts
 }
 
 /* Articles */
-p.post_entry {  
+p.post_entry {
 }
+
+
 article > header {
   list-style-type: none;
   padding: 0px 10px;
@@ -137,9 +140,9 @@ a:hover { text-decoration: underline; }
 
 /* Sidebar */
 aside {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 900;
-  width: 300px;
+  width: 20%;
   height: 100%;
   position: fixed;
   top: 0; left: 0;
@@ -160,14 +163,14 @@ aside > ul {
 
 aside > h1 { 
   text-transform: uppercase;
-  font-size: 25px; 
+  font-size: 30px;
   font-weight: 900;
   margin-bottom: 15px;
 }
 
 aside > h2 { 
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 10px 5px;
 }
@@ -234,7 +237,7 @@ aside > h2 {
   text-transform: uppercase;
   display: block; 
   padding: 0.77273rem 0;
-  font-size: 16px;
+  font-size: 20px;
   /* border-bottom: 1px solid #328cc7; */
 }
 
@@ -271,18 +274,19 @@ aside > h2 {
   left: 0;
   bottom: 0;
   width: 100%;
-  /* background-color:white; */
   text-align: center;
 }
 
 .footer-aside {
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  text-align: center;
+  margin: auto;
+  width: 90%;
+  font-size: 14px;
 }
 
 .time-sidual{
-	overflow:hidden;
+	overflow:auto;
 }
 .time-sidual li{
   display: block;
@@ -340,10 +344,22 @@ aside > h2 {
   padding: 10px 25px;
 }
 
+.bottom-div-merge {
+  box-sizing: border-box;
+  width: calc(66.667% - 20px);
+  padding: 30px;
+  height: 90%;
+  min-width: 250px;
+  border-radius: 25px;
+  box-shadow: 0px 10px 50px rgba(41, 128, 185, .3);
+  padding: 10px 25px;
+}
+
+
 /*--------divs in article pages------------*/
 
 #leftbox {
-  width: 50%;
+  width: 30%;
   float: left;
 }
 
@@ -353,8 +369,10 @@ aside > h2 {
 }
 
 #rightbox {
-  width: 50%;
+  width: 60%;
   float: right;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 /*--------CV Header------------*/
@@ -369,6 +387,18 @@ aside > h2 {
   width:70px;
   padding:6px;
   border-radius: 10px;
+}
+
+.img-left{
+  width: 400px;
+  height: auto;
+  autofloat: left;
+}
+
+.img-right{
+  width: 400px;
+  height: auto;
+  autofloat: right;
 }
 
 .span-cv{
@@ -415,6 +445,18 @@ aside > h2 {
     height: 50px;
     width: 50px;
     margin: 10px auto;
+  }
+
+  .one {
+
+  }
+  .two {
+    flex-basis: 100%;
+    order: 3;
+  }
+  .three {
+    flex-basis: 100%;
+    order: 2;
   }
 }
 
