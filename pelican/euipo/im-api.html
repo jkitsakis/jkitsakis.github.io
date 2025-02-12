@@ -30,29 +30,20 @@
 
     <div class="entry-content">
       <h2><em>Infrastructure Microservices</em> - <a href="https://git.euipo.europa.eu/projects/IM" target="_blank">BitBucket</a></h2>
-<p NETWORK_AWS_PROD="prod.aws.oami.eu" _="%" set>{% set GENERATOR_URI = 'eop/document-generator' %}
-{% set REPOSITORY_URI = 'eop/document-repository' %}
-{% set PREFIX_DEV='dev'%}
-{% set PREFIX_TEST='test'%}
-{% set PREFIX_PREPROD='pp'%}
-{% set PREFIX_PROD='production'%}
-{% set GENERATOR_APP_NAME='document-generator'%}
-{% set REPOSITORY_APP_NAME='document-repository'%}
-{% set NETWORK_AWS='nonprod.aws.oami.eu'%}</p>
-<p><strong>{{GENERATOR_APP_NAME}}</strong></p>
+<p><strong>document-generator</strong></p>
 <ul>
-<li><strong>AWS-Dev</strong>:  http://{{PREFIX_DEV}}-{{GENERATOR_APP_NAME}}.{{NETWORK_AWS}}/{{GENERATOR_URI}}</li>
-<li><strong>AWS-Test</strong>:  http://{{PREFIX_TEST}}-{{GENERATOR_APP_NAME}}.{{NETWORK_AWS}}/{{GENERATOR_URI}}</li>
-<li><strong>AWS-PreProd</strong>:  http://{{PREFIX_PREPROD}}-{{GENERATOR_APP_NAME}}.{{NETWORK_AWS}}/{{GENERATOR_URI}}</li>
-<li><strong>AWS-Prod</strong>:  http://{{PREFIX_PROD}}-{{GENERATOR_APP_NAME}}.{{NETWORK_AWS_PROD}}/{{GENERATOR_URI}}</li>
+<li><strong>AWS-Dev</strong>:  http://dev-document-generator.nonprod.aws.oami.eu/eop/document-generator</li>
+<li><strong>AWS-Test</strong>:  http://test-document-generator.nonprod.aws.oami.eu/eop/document-generator</li>
+<li><strong>AWS-PreProd</strong>:  http://pp-document-generator.nonprod.aws.oami.eu/eop/document-generator</li>
+<li><strong>AWS-Prod</strong>:  http://production-document-generator.prod.aws.oami.eu/eop/document-generator</li>
 </ul>
 <hr>
-<p><strong>{{REPOSITORY_APP_NAME}}</strong></p>
+<p><strong>document-repository</strong></p>
 <ul>
-<li><strong>AWS-Dev</strong>:  http://{{PREFIX_DEV}}-{{REPOSITORY_APP_NAME}}.{{NETWORK_AWS}}/{{REPOSITORY_URI}}</li>
-<li><strong>AWS-Test</strong>:  http://{{PREFIX_TEST}}-{{REPOSITORY_APP_NAME}}.{{NETWORK_AWS}}/{{REPOSITORY_URI}}</li>
-<li><strong>AWS-PreProd</strong>:  http://{{PREFIX_PREPROD}}-{{REPOSITORY_APP_NAME}}.{{NETWORK_AWS}}/{{REPOSITORY_URI}}</li>
-<li><strong>AWS-Prod</strong>:  http://{{PREFIX_PROD}}-{{REPOSITORY_APP_NAME}}.{{NETWORK_AWS_PROD}}/{{REPOSITORY_URI}}</li>
+<li><strong>AWS-Dev</strong>:  http://dev-document-repository.nonprod.aws.oami.eu/eop/document-repository</li>
+<li><strong>AWS-Test</strong>:  http://test-document-repository.nonprod.aws.oami.eu/eop/document-repository</li>
+<li><strong>AWS-PreProd</strong>:  http://pp-document-repository.nonprod.aws.oami.eu/eop/document-repository</li>
+<li><strong>AWS-Prod</strong>:  http://production-document-repository.prod.aws.oami.eu/eop/document-repository</li>
 </ul>
     </div><!-- /.entry-content -->
 
