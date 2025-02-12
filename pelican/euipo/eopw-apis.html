@@ -5,43 +5,49 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>EOPW APIs</title>
-        <link rel="stylesheet" href="/pelican/euipo/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
         <meta name="description" content="EOPW APIs : Website BE, Admin Tool, Story Block" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/pelican/euipo/">EUIPO dev</a></h1>
+                <h1><a href="/">EUIPO dev</a></h1>
                 <nav><ul>
-                    <li><a href="/pelican/euipo/pages/argo-links.html">ArgoCD</a></li>
-                    <li><a href="/pelican/euipo/pages/docs.html">Documents</a></li>
-                    <li><a href="/pelican/euipo/pages/ui-links.html">UI Links</a></li>
-                    <li class="active"><a href="/pelican/euipo/category/rest-apis.html">Rest APIs</a></li>
-                    <li><a href="/pelican/euipo/category/tutorials.html">Tutorials</a></li>
+                    <li><a href="/pages/argo-links.html">ArgoCD</a></li>
+                    <li><a href="/pages/docs.html">Documents</a></li>
+                    <li><a href="/pages/ui-links.html">UI Links</a></li>
+                    <li class="active"><a href="/category/rest-apis.html">Rest APIs</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/pelican/euipo/eopw-apis.html" rel="bookmark"
+        <a href="/eopw-apis.html" rel="bookmark"
            title="Permalink to EOPW APIs">EOPW APIs</a></h1>
     </header>
 
     <div class="entry-content">
-      <h2><em>Website BE</em> - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-dev-aws?view=tree&resource=" target="_blank">Argo CD Dev</a> - <a href="https://jenkins.prod.oami.eu/job/EOP/" target="_blank">Jenkins</a></h2>
+      <p NETWORK_AWS_PROD="prod.aws.oami.eu" _="%" set>{% set EOPW_URI = 'portal/app/api' %}
+{% set PREFIX_DEV='dev'%}
+{% set PREFIX_TEST='test'%}
+{% set PREFIX_PROD='production'%}
+{% set APPLICATION_NAME='website-backend'%}
+{% set NETWORK_AWS='nonprod.aws.oami.eu'%}</p>
+<h2><em>Website BE</em> - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-website-backend/browse" target="_blank">BitBucket</a> - <a href="https://argocd-dev.nonprod.aws.oami.eu/applications/argocd/website-dev-aws?view=tree&resource=" target="_blank">Argo CD Dev</a> - <a href="https://jenkins.prod.oami.eu/job/EOP/" target="_blank">Jenkins</a></h2>
 <ul>
-<li><strong>AWS-Dev</strong>:  http://dev-website-backend.nonprod.aws.oami.eu/portal/app/api</li>
-<li><strong>AWS-Test</strong>:  http://test-website-backend.nonprod.aws.oami.eu/portal/app/api</li>
-<li><strong>AWS-Prod</strong>:  http://production-website-backend.prod.aws.oami.eu/portal/app/api</li>
+<li><strong>AWS-Dev</strong>:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}</li>
+<li><strong>AWS-Test</strong>:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}</li>
+<li><strong>AWS-Prod</strong>:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}</li>
 </ul>
 <hr>
 <details>
 <summary>Legacy links</summary>
 <ul>
-  <li>**Integration**:  https://integration.euipo.europa.eu/portal/app/api</li>
-  <li>**PreProd**:  https://pp.euipo.europa.eu/portal/app/api</li>
-  <li>**Prod**:  https://www.euipo.europa.eu/portal/app/api</li>
+  <li>**Integration**:  https://integration.euipo.europa.eu/{{EOPW_URI}}</li>
+  <li>**PreProd**:  https://pp.euipo.europa.eu/{{EOPW_URI}}</li>
+  <li>**Prod**:  https://www.euipo.europa.eu/{{EOPW_URI}}</li>
 </ul>
 </details>
 <hr>
@@ -80,34 +86,34 @@
 
 <hr>
 <h2><em>Admin Tool</em> - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-admintool-backend/browse" target="_blank">BitBucket</a></h2>
-<ul>
-<li><strong>AWS-Dev</strong>:  http://dev-eop-admintool-backend.nonprod.aws.oami.eu/eop/admintool/app/api/</li>
-<li><strong>AWS-Test</strong>:  http://test-eop-admintool-backend.nonprod.aws.oami.eu/eop/admintool/app/api/</li>
-<li><strong>AWS-Prod</strong>:  http://production-eop-admintool-backend.prod.aws.oami.eu/eop/admintool/app/api/</li>
-</ul>
+<p>{% set EOPW_URI = 'eop/admintool/app/api/' %}
+{% set APPLICATION_NAME = 'eop-admintool-backend' %}
+- <strong>AWS-Dev</strong>:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- <strong>AWS-Test</strong>:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- <strong>AWS-Prod</strong>:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}</p>
 <hr>
 <details>
 <summary>Legacy links</summary>
 <ul>
-  <li>**Integration**:  https://integration.euipo.europa.eu/eop/admintool/app/api/</li>
-  <li>**PreProd**:  https://pp.euipo.europa.eu/eop/admintool/app/api/</li>
-  <li>**Prod**:  https://www.euipo.europa.eu/eop/admintool/app/api/</li>
+  <li>**Integration**:  https://integration.euipo.europa.eu/{{EOPW_URI}}</li>
+  <li>**PreProd**:  https://pp.euipo.europa.eu/{{EOPW_URI}}</li>
+  <li>**Prod**:  https://www.euipo.europa.eu/{{EOPW_URI}}</li>
 </ul>
 </details>
 <hr>
 <h2><em>Story Blok</em> - <a href="https://git.euipo.europa.eu/projects/EOPW/repos/eop-storyblok-api/browse" target="_blank">BitBucket</a></h2>
-<ul>
-<li><strong>AWS-Dev</strong>:  http://dev-storyblok-api.nonprod.aws.oami.eu/eop/storyblok/</li>
-<li><strong>AWS-Test</strong>:  http://test-storyblok-api.nonprod.aws.oami.eu/eop/storyblok/</li>
-<li><strong>AWS-Prod</strong>:  http://production-storyblok-api.prod.aws.oami.eu/eop/storyblok/</li>
-</ul>
+<p>{% set EOPW_URI = 'eop/storyblok/' %}
+{% set APPLICATION_NAME = 'storyblok-api' %}
+- <strong>AWS-Dev</strong>:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- <strong>AWS-Test</strong>:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}.{{NETWORK_AWS}}/{{EOPW_URI}}
+- <strong>AWS-Prod</strong>:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}.{{NETWORK_AWS_PROD}}/{{EOPW_URI}}</p>
 <hr>
 <details>
 <summary>Legacy links</summary>
 <ul>
-  <li>**Integration**:  https://integration.euipo.europa.eu/eop/storyblok/</li>
-  <li>**PreProd**:  https://pp.euipo.europa.eu/eop/storyblok/</li>
-  <li>**Prod**:  https://www.euipo.europa.eu/eop/storyblok/</li>
+  <li>**Integration**:  https://integration.euipo.europa.eu/{{EOPW_URI}}</li>
+  <li>**PreProd**:  https://pp.euipo.europa.eu/{{EOPW_URI}}</li>
+  <li>**Prod**:  https://www.euipo.europa.eu/{{EOPW_URI}}</li>
 </ul>
 </details>
 <hr>

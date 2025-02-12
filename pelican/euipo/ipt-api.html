@@ -5,35 +5,42 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content="Pelican" />
         <title>IPT API</title>
-        <link rel="stylesheet" href="/pelican/euipo/theme/css/main.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
         <meta name="description" content="Proceeding Search API" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="/pelican/euipo/">EUIPO dev</a></h1>
+                <h1><a href="/">EUIPO dev</a></h1>
                 <nav><ul>
-                    <li><a href="/pelican/euipo/pages/argo-links.html">ArgoCD</a></li>
-                    <li><a href="/pelican/euipo/pages/docs.html">Documents</a></li>
-                    <li><a href="/pelican/euipo/pages/ui-links.html">UI Links</a></li>
-                    <li class="active"><a href="/pelican/euipo/category/rest-apis.html">Rest APIs</a></li>
-                    <li><a href="/pelican/euipo/category/tutorials.html">Tutorials</a></li>
+                    <li><a href="/pages/argo-links.html">ArgoCD</a></li>
+                    <li><a href="/pages/docs.html">Documents</a></li>
+                    <li><a href="/pages/ui-links.html">UI Links</a></li>
+                    <li class="active"><a href="/category/rest-apis.html">Rest APIs</a></li>
+                    <li><a href="/category/tutorials.html">Tutorials</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="/pelican/euipo/ipt-api.html" rel="bookmark"
+        <a href="/ipt-api.html" rel="bookmark"
            title="Permalink to IPT API">IPT API</a></h1>
     </header>
 
     <div class="entry-content">
       <h2><em>Proceeding Search API</em> - <a href="https://git.euipo.europa.eu/projects/IPT/repos/proceeding-search-api/browse" target="_blank">BitBucket</a></h2>
+<p NETWORK_AWS_PROD="prod.aws.oami.eu" _="%" set>{% set EOPW_URI = 'search?query=type==RCD' %}
+{% set PREFIX_DEV='dev'%}
+{% set PREFIX_TEST='test'%}
+{% set PREFIX_PREPROD='pp'%}
+{% set PREFIX_PROD='production'%}
+{% set APPLICATION_NAME='api.dev.oami.eu/proceeding-search-api'%}
+{% set NETWORK_AWS='nonprod.aws.oami.eu'%}</p>
 <ul>
-<li><strong>AWS-Dev</strong>:  http://dev-api.dev.oami.eu/proceeding-search-api/search?query=type==RCD</li>
-<li><strong>AWS-Test</strong>:  http://test-api.dev.oami.eu/proceeding-search-api/search?query=type==RCD</li>
-<li><strong>AWS-Prod</strong>:  http://production-api.dev.oami.eu/proceeding-search-api/search?query=type==RCD</li>
+<li><strong>AWS-Dev</strong>:  http://{{PREFIX_DEV}}-{{APPLICATION_NAME}}/{{EOPW_URI}}</li>
+<li><strong>AWS-Test</strong>:  http://{{PREFIX_TEST}}-{{APPLICATION_NAME}}/{{EOPW_URI}}</li>
+<li><strong>AWS-Prod</strong>:  http://{{PREFIX_PROD}}-{{APPLICATION_NAME}}/{{EOPW_URI}}</li>
 </ul>
     </div><!-- /.entry-content -->
 
