@@ -5,196 +5,196 @@ xmlns:xhtml="http://www.w3.org/1999/xhtml"
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>/</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/archives.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/archives.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/authors.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/authors.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/categories.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/categories.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/rest-apis.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/category/rest-apis.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/rest-apis2.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/category/rest-apis2.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/rest-apis3.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/category/rest-apis3.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/category/tutorials.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/category/tutorials.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/eda-apis.html</loc>
+<loc>/pelican/euipo/eda-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/eea-apis.html</loc>
+<loc>/pelican/euipo/eea-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/eee-apis.html</loc>
+<loc>/pelican/euipo/eee-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/ega-apis.html</loc>
+<loc>/pelican/euipo/ega-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/emea-apis.html</loc>
+<loc>/pelican/euipo/emea-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/eopw-apis.html</loc>
+<loc>/pelican/euipo/eopw-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/eopwa-apis.html</loc>
+<loc>/pelican/euipo/eopwa-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/epa-apis.html</loc>
+<loc>/pelican/euipo/epa-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/ews-apis.html</loc>
+<loc>/pelican/euipo/ews-apis.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/im-api.html</loc>
+<loc>/pelican/euipo/im-api.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/index2.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/index2.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/index3.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/index3.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/ipt-api.html</loc>
+<loc>/pelican/euipo/ipt-api.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/argo-links.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/pages/argo-links.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/docs.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/pages/docs.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/pages/ui-links.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/pages/ui-links.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tags.html</loc>
-<lastmod>2025-02-12T16:05:58-00:00</lastmod>
+<loc>/pelican/euipo/tags.html</loc>
+<lastmod>2025-02-12T16:15:44-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tutorial1.html</loc>
+<loc>/pelican/euipo/tutorial1.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tutorial2.html</loc>
+<loc>/pelican/euipo/tutorial2.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>/tutorial3.html</loc>
+<loc>/pelican/euipo/tutorial3.html</loc>
 <lastmod>2018-02-26T00:00:00+02:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
