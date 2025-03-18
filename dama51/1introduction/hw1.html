@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>Topics Analysis from HW1.docx</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="HW1" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+ class="active"><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/1introduction/hw1.html" rel="bookmark"
+             title="Permalink to Topics Analysis from HW1.docx">Topics Analysis from HW1.docx</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <p>Based on the provided document, <strong>HW1</strong> in the <strong>DAMA51</strong> course covers the following <strong>Machine Learning (ML) and Data Analysis (DA)</strong> topics:</p>
+<h3><strong>Data Analysis (DA) Topics:</strong></h3>
+<ol>
+<li>
+<p><strong>Tabular and Graphical Representations</strong></p>
+<ul>
+<li>Dataset inspection using <code>str()</code> and <code>head()</code></li>
+<li>Creating contingency tables (absolute frequency tables)</li>
+<li>Bar charts for categorical variables</li>
+<li>Pie charts for categorical data distribution</li>
+<li>Box plots for age distribution analysis</li>
+</ul>
+</li>
+<li>
+<p><strong>Correlation Analysis</strong></p>
+<ul>
+<li>Computing correlation matrices using Pearson’s correlation coefficient</li>
+<li>Visualizing correlation using heatmaps</li>
+<li>Extracting specific correlation values between variables</li>
+<li>Interpreting scatter plots for correlation strength</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Frames and Data Manipulation</strong></p>
+<ul>
+<li>Handling and transforming datasets in <strong>R</strong></li>
+<li>Removing unnecessary attributes</li>
+<li>Setting row names and filtering data based on conditions</li>
+<li>Aggregation and computation of statistics (mean, median)</li>
+<li>Normalization using the <strong>Min-Max</strong> formula</li>
+<li>Creating new attributes and deriving performance metrics</li>
+<li>Categorizing data using ordinal classification</li>
+</ul>
+</li>
+</ol>
+<h3><strong>Machine Learning (ML) Topics:</strong></h3>
+<ol>
+<li>
+<p><strong>Feature Engineering</strong></p>
+<ul>
+<li>Normalizing attributes (Min-Max scaling)</li>
+<li>Creating new features based on derived formulas (Performance metric)</li>
+<li>Categorizing data using manually defined rules (<code>Weak</code>, <code>Normal</code>, <code>Strong</code> grades)</li>
+</ul>
+</li>
+<li>
+<p><strong>Exploratory Data Analysis (EDA)</strong></p>
+<ul>
+<li>Understanding dataset structures</li>
+<li>Identifying variable distributions</li>
+<li>Identifying relationships between features</li>
+<li>Detecting patterns in data using visualization techniques (scatter plots, heatmaps)  </li>
+</ul>
+</li>
+</ol>
+<h3><strong>Key Datasets Used:</strong></h3>
+<ul>
+<li><strong>Disease Symptoms and Patient Profile Dataset</strong> (Health-related data analysis)  </li>
+<li><strong>Student Performance Factors Dataset</strong> (Education-related feature analysis)  </li>
+<li><strong>PokeDex Dataset</strong> (Game-related dataset for practice with data frames)  </li>
+</ul>
+<hr>
+<h2>Here is a structured <strong>step-by-step approach</strong> to solving each topic using <strong>R</strong>:</h2>
+<h3><strong>Topic 2: Tabular and Graphical Representations</strong></h3>
+<h3><strong>Dataset: Disease Symptoms and Patient Profile Dataset</strong></h3>
+<p><strong>Steps:</strong>  </p>
+<ul>
+<li><strong>Load the dataset</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">dataset</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;path_to_file.csv&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Inspect the dataset</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">str</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="w">   </span><span class="c1"># Check structure</span>
+<span class="w">   </span><span class="nf">head</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="w">  </span><span class="c1"># View first few rows</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Retrieve specific values</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">nrow</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span><span class="w">  </span><span class="c1"># Number of records</span>
+<span class="w">   </span><span class="nf">length</span><span class="p">(</span><span class="nf">which</span><span class="p">(</span><span class="nf">sapply</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="n">is.numeric</span><span class="p">)))</span><span class="w">  </span><span class="c1"># Count numeric attributes</span>
+<span class="w">   </span><span class="n">dataset</span><span class="o">$</span><span class="n">Disease</span><span class="p">[</span><span class="m">3</span><span class="p">]</span><span class="w">  </span><span class="c1"># Get &quot;Disease&quot; value for the 3rd record</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Create a contingency table for Fever &amp; Cough</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">table_FC</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">table</span><span class="p">(</span><span class="n">dataset</span><span class="o">$</span><span class="n">Fever</span><span class="p">,</span><span class="w"> </span><span class="n">dataset</span><span class="o">$</span><span class="n">Cough</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">addmargins</span><span class="p">(</span><span class="n">table_FC</span><span class="p">)</span><span class="w">  </span><span class="c1"># Include row/column sums</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Bar chart for Fatigue symptom frequency</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Fatigue</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_bar</span><span class="p">(</span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Fatigue Symptom Frequency&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Pie chart for Cholesterol Levels</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">cholesterol_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">table</span><span class="p">(</span><span class="n">dataset</span><span class="o">$</span><span class="n">Cholesterol_Level</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">pie</span><span class="p">(</span><span class="n">cholesterol_table</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Cholesterol Level Distribution&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Box plots for age distribution across diseases</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Disease</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Age</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_boxplot</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span><span class="p">,</span><span class="w"> </span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">))</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>Topic 3: Correlation</strong></h2>
+<h3><strong>Dataset: Student Performance Factors</strong></h3>
+<p>📌 <strong>Steps:</strong>  </p>
+<ul>
+<li><strong>Load the dataset</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">student_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;path_to_file.csv&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Inspect the dataset</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">str</span><span class="p">(</span><span class="n">student_data</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">nrow</span><span class="p">(</span><span class="n">student_data</span><span class="p">)</span><span class="w">  </span><span class="c1"># Number of records</span>
+<span class="w">   </span><span class="nf">names</span><span class="p">(</span><span class="n">student_data</span><span class="p">)</span><span class="w">  </span><span class="c1"># Attribute names</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Subset numeric attributes only</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">student_numeric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">student_data</span><span class="p">[</span><span class="nf">sapply</span><span class="p">(</span><span class="n">student_data</span><span class="p">,</span><span class="w"> </span><span class="n">is.numeric</span><span class="p">)]</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Compute correlation matrix</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">cor_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cor</span><span class="p">(</span><span class="n">student_numeric</span><span class="p">,</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;complete.obs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pearson&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Visualize correlation matrix (heatmap)</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">library</span><span class="p">(</span><span class="n">reshape2</span><span class="p">)</span>
+<span class="w">   </span><span class="n">melted_cor</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">melt</span><span class="p">(</span><span class="n">cor_matrix</span><span class="p">)</span>
+<span class="w">   </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">melted_cor</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">Var1</span><span class="p">,</span><span class="w"> </span><span class="n">Var2</span><span class="p">,</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_tile</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">scale_fill_gradient2</span><span class="p">(</span><span class="n">low</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">high</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;white&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">theme</span><span class="p">(</span><span class="n">axis.text.x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">element_text</span><span class="p">(</span><span class="n">angle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">90</span><span class="p">))</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Extract specific correlation values</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">cor_matrix</span><span class="p">[</span><span class="s">&quot;Attendance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hours_Studied&quot;</span><span class="p">]</span>
+<span class="w">   </span><span class="n">cor_matrix</span><span class="p">[</span><span class="s">&quot;Attendance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Exam_Score&quot;</span><span class="p">]</span>
+<span class="w">   </span><span class="n">cor_matrix</span><span class="p">[</span><span class="s">&quot;Tutoring_Sessions&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Previous_Scores&quot;</span><span class="p">]</span>
+<span class="w">   </span><span class="n">cor_matrix</span><span class="p">[</span><span class="s">&quot;Physical_Activity&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Sleep_Hours&quot;</span><span class="p">]</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Identify scatter plot pattern (manually check plots)</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">ggplot</span><span class="p">(</span><span class="n">student_data</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Hours_Studied</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Exam_Score</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">     </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">se</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>Topic 4: Data Frames</strong></h2>
+<h3><strong>Dataset: PokeDex Dataset</strong></h3>
+<p>📌 <strong>Steps:</strong><br>
+- <strong>Load the dataset</strong>  </p>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">pokedex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;pokedex.csv&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stringsAsFactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Remove image path column</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">pokedex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pokedex</span><span class="p">[</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">pokedex</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Image.Path&quot;</span><span class="p">))]</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Set row names and remove Name column</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">rownames</span><span class="p">(</span><span class="n">pokedex</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pokedex</span><span class="o">$</span><span class="n">Name</span>
+<span class="w">   </span><span class="n">pokedex</span><span class="o">$</span><span class="n">Name</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="kc">NULL</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Retrieve Omastar’s record</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">pokedex</span><span class="p">[</span><span class="s">&quot;Omastar&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Count Pokémon without a second type</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">sum</span><span class="p">(</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Type.2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Count Pokémon with Speed &lt; 60</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">sum</span><span class="p">(</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Speed</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">60</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Compute average attack of Water-type Pokémon</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="nf">mean</span><span class="p">(</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Attack</span><span class="p">[</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Type.1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Water&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">pokedex</span><span class="o">$</span><span class="n">Type.2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Water&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Identify Fairy Pokémon with highest HP</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">fairy_pokemon</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pokedex</span><span class="p">[</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Type.1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Fairy&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">pokedex</span><span class="o">$</span><span class="n">Type.2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Fairy&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+<span class="w">   </span><span class="n">fairy_pokemon</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">fairy_pokemon</span><span class="o">$</span><span class="n">HP</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Normalize HP, Attack, Defense using Min-Max</strong>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">normalize</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="w">   </span><span class="n">pokedex</span><span class="o">$</span><span class="n">NormHP</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">normalize</span><span class="p">(</span><span class="n">pokedex</span><span class="o">$</span><span class="n">HP</span><span class="p">)</span>
+<span class="w">   </span><span class="n">pokedex</span><span class="o">$</span><span class="n">NormAttack</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">normalize</span><span class="p">(</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Attack</span><span class="p">)</span>
+<span class="w">   </span><span class="n">pokedex</span><span class="o">$</span><span class="n">NormDefense</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">normalize</span><span class="p">(</span><span class="n">pokedex</span><span class="o">$</span><span class="n">Defense</span><span class="p">)</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Find Pokémon with top 3 NormHP values</strong><br>
+<code>r
+    head(pokedex[order(-pokedex$NormHP), "NormHP"], 3)</code></li>
+<li><strong>Compute median NormAttack and average NormDefense</strong><br>
+<code>r
+    median(pokedex$NormAttack)
+    mean(pokedex$NormDefense)</code></li>
+<li><strong>Create Performance metric &amp; Grade column</strong><br>
+<code>r
+    pokedex$Performance &lt;- pokedex$NormHP * pokedex$NormAttack * pokedex$NormDefense + 0.0002
+    pokedex$Grade &lt;- cut(pokedex$Performance, 
+                          breaks = c(0, 0.15, 0.2, 1),
+                          labels = c("Weak", "Normal", "Strong"))</code></li>
+<li><strong>Find number of Pokémon with "Strong" Grade</strong><br>
+<code>r
+    sum(pokedex$Grade == "Strong")</code></li>
+<li><strong>Find Grade of Pokémon named "Haunter"</strong><br>
+<code>r
+    pokedex["Haunter", "Grade"]</code></li>
+</ul>
+<hr>
+<h3><strong>Summary of the Approach</strong></h3>
+<ol>
+<li><strong>Load and inspect the dataset</strong> (<code>read.csv()</code>, <code>str()</code>, <code>head()</code>)  </li>
+<li><strong>Process and clean the data</strong> (<code>subset()</code>, <code>filter()</code>, <code>normalize()</code>)  </li>
+<li><strong>Perform calculations and statistical analysis</strong> (<code>cor()</code>, <code>mean()</code>, <code>median()</code>)  </li>
+<li><strong>Visualize the results</strong> (<code>ggplot2</code> for charts, <code>table()</code> for contingency tables)  </li>
+<li><strong>Extract key insights and categorize data</strong> (<code>cut()</code> for grading, sorting methods)  </li>
+</ol>
+<p>Would you like additional guidance or refinements in specific areas? 🚀</p>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>

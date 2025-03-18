@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>Topics Analysis from HW2.docx</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="HW2" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+ class="active"><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/2various-topics/hw2.html" rel="bookmark"
+             title="Permalink to Topics Analysis from HW2.docx">Topics Analysis from HW2.docx</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <p>The topics covered in the <strong>DAMA51 Homework 2</strong> assignment from the <strong>Hellenic Open University</strong> include the following <strong>Machine Learning (ML)</strong> and <strong>Data Analysis (DA)</strong> concepts:</p>
+<h3><strong>Machine Learning (ML) Topics:</strong></h3>
+<ol>
+<li>
+<p><strong>Principal Component Analysis (PCA)</strong></p>
+<ul>
+<li>Standardization (Z-score)</li>
+<li>Variance explained by principal components</li>
+<li>Scree plot and scatter plots of principal components</li>
+</ul>
+</li>
+<li>
+<p><strong>Confusion Matrix and ROC Curve</strong></p>
+<ul>
+<li>Classification threshold selection</li>
+<li>Calculating confusion matrix, recall, precision, and accuracy</li>
+<li>Computing True Positive Rate (TPR) &amp; False Positive Rate (FPR) for different thresholds</li>
+<li>Creating an ROC curve</li>
+</ul>
+</li>
+<li>
+<p><strong>Gradient Descent for Linear Regression</strong></p>
+<ul>
+<li>Implementing gradient descent from scratch</li>
+<li>Using Sum of Squared Errors (SSE) as the cost function</li>
+<li>Updating slope and intercept using gradient updates</li>
+<li>Visualizing best-fit line for different iterations</li>
+</ul>
+</li>
+</ol>
+<h3><strong>Data Analysis (DA) Topics:</strong></h3>
+<ol>
+<li>
+<p><strong>Hypothesis Testing</strong></p>
+<ul>
+<li>Conducting a <strong>t-test</strong> on the PlantGrowth dataset</li>
+<li>Performing a <strong>Chi-Square Test of Independence</strong> on customer satisfaction data</li>
+</ul>
+</li>
+<li>
+<p><strong>Linear Regression</strong></p>
+<ul>
+<li>Building a linear model using <code>lm()</code> in R</li>
+<li>Predicting population values using the model</li>
+<li>Calculating Mean Squared Error (MSE)</li>
+<li>Visualizing the regression line with a scatter plot</li>
+</ul>
+</li>
+</ol>
+<p>This assignment focuses heavily on <strong>statistical analysis</strong>, <strong>dimensionality reduction</strong>, <strong>classification metrics</strong>, and <strong>machine learning model training</strong> using <strong>R</strong>.</p>
+<hr>
+<h3><strong>Structured Approach to Solving DAMA51 HW2 Tasks in R</strong></h3>
+<p>Below is a structured approach to systematically tackle each topic in R.</p>
+<hr>
+<h2><strong>📌 Topic 2: Principal Component Analysis (PCA)</strong></h2>
+<p><strong>Steps:</strong>
+1. <strong>Load and Clean Data</strong>
+   - Read CSV file (<code>read.csv</code>)
+   - Remove ID column
+   - Handle missing values (e.g., <code>na.omit()</code>, <code>mean imputation</code>)</p>
+<ol>
+<li><strong>Compute Summary Statistics</strong></li>
+<li>
+<p>Calculate mean (<code>mean()</code>) and standard deviation (<code>sd()</code>) for each column.</p>
+</li>
+<li>
+<p><strong>Standardize Data</strong></p>
+</li>
+<li>
+<p>Use <code>scale()</code> function for Z-score normalization.</p>
+</li>
+<li>
+<p><strong>Perform PCA</strong></p>
+</li>
+<li>Use <code>prcomp()</code> function to extract principal components.</li>
+<li>
+<p>Compute variance explained by each component.</p>
+</li>
+<li>
+<p><strong>Visualizations</strong></p>
+</li>
+<li><strong>Scree Plot:</strong> Use <code>barplot()</code> or <code>ggplot2</code> to visualize variance explained.</li>
+<li><strong>Scatter Plot:</strong> Use <code>ggplot2</code> to plot first 2 and first 3 principal components.</li>
+</ol>
+<p><strong>R Code Template:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load Data</span>
+<span class="n">water_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="nf">file.choose</span><span class="p">())</span><span class="w">  </span><span class="c1"># Choose the dataset file interactively</span>
+<span class="n">water_data_noid</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">water_data</span><span class="p">[,</span><span class="m">-1</span><span class="p">]</span><span class="w">  </span><span class="c1"># Remove ID column</span>
+
+<span class="c1"># Summary statistics</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">water_data_noid</span><span class="p">)</span>
+<span class="nf">sapply</span><span class="p">(</span><span class="n">water_data_noid</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">sapply</span><span class="p">(</span><span class="n">water_data_noid</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Standardization</span>
+<span class="n">scaled_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">water_data_noid</span><span class="p">)</span>
+
+<span class="c1"># Perform PCA</span>
+<span class="n">pca_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">scale.</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">pca_result</span><span class="p">)</span>
+
+<span class="c1"># Scree Plot</span>
+<span class="n">variance_explained</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pca_result</span><span class="o">$</span><span class="n">sdev</span><span class="o">^</span><span class="m">2</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">pca_result</span><span class="o">$</span><span class="n">sdev</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="n">variance_explained</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Scree Plot&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Principal Component&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Variance Explained&quot;</span><span class="p">)</span>
+
+<span class="c1"># Scatter Plot of First 2 Components</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="n">pca_df</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">pca_result</span><span class="o">$</span><span class="n">x</span><span class="p">[,</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">])</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">pca_df</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">PC1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">PC2</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;PCA Scatter Plot (PC1 vs PC2)&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>📌 Topic 3: Confusion Matrix and ROC Curve</strong></h2>
+<p><strong>Steps:</strong>
+1. <strong>Load Data</strong>
+   - Read CSV file (<code>read.csv</code>).</p>
+<ol>
+<li><strong>Construct Confusion Matrix</strong></li>
+<li>Classify based on threshold (0.65) using <code>ifelse()</code>.</li>
+<li>
+<p>Use <code>table()</code> to create a confusion matrix.</p>
+</li>
+<li>
+<p><strong>Compute Performance Metrics</strong></p>
+</li>
+<li>
+<p>Calculate <strong>recall, precision, and accuracy</strong> using:</p>
+<ul>
+<li><code>TPR = TP / (TP + FN)</code></li>
+<li><code>FPR = FP / (FP + TN)</code></li>
+<li><code>Accuracy = (TP + TN) / (TP + FP + TN + FN)</code></li>
+</ul>
+</li>
+<li>
+<p><strong>Vary Threshold and Compute TPR, FPR</strong></p>
+</li>
+<li>
+<p>Loop through different thresholds (0.25, 0.5, 0.75) and compute confusion matrices.</p>
+</li>
+<li>
+<p><strong>Plot ROC Curve</strong></p>
+</li>
+<li>Compute ROC points for multiple thresholds.</li>
+<li>Use <code>ggplot2</code> to visualize.</li>
+</ol>
+<p><strong>R Code Template:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load Data</span>
+<span class="n">eye_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="nf">file.choose</span><span class="p">(),</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Define Threshold</span>
+<span class="n">threshold</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.65</span>
+<span class="n">eye_data</span><span class="o">$</span><span class="n">predicted_class</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">eye_data</span><span class="o">$</span><span class="n">UseOfGlassesPredicted</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">threshold</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+
+<span class="c1"># Confusion Matrix</span>
+<span class="n">conf_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">table</span><span class="p">(</span><span class="n">eye_data</span><span class="o">$</span><span class="n">predicted_class</span><span class="p">,</span><span class="w"> </span><span class="n">eye_data</span><span class="o">$</span><span class="n">UseOfGlassesActual</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">conf_matrix</span><span class="p">)</span>
+
+<span class="c1"># Compute Performance Metrics</span>
+<span class="n">TP</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">conf_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+<span class="n">FP</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">conf_matrix</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+<span class="n">FN</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">conf_matrix</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">]</span>
+<span class="n">TN</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">conf_matrix</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>
+
+<span class="n">recall</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">TP</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">TP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FN</span><span class="p">)</span>
+<span class="n">precision</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">TP</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="n">TP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FP</span><span class="p">)</span>
+<span class="n">accuracy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">TP</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">TN</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">conf_matrix</span><span class="p">)</span>
+
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Recall:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">recall</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\nPrecision:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">precision</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\nAccuracy:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">accuracy</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># ROC Curve Calculation</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">pROC</span><span class="p">)</span>
+<span class="n">roc_curve</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">roc</span><span class="p">(</span><span class="n">eye_data</span><span class="o">$</span><span class="n">UseOfGlassesActual</span><span class="p">,</span><span class="w"> </span><span class="n">eye_data</span><span class="o">$</span><span class="n">UseOfGlassesPredicted</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">roc_curve</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;ROC Curve&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>📌 Topic 4: Hypothesis Testing &amp; Gradient Descent</strong></h2>
+<h3><strong>4A: T-Test on PlantGrowth Dataset</strong></h3>
+<ol>
+<li>Load dataset (<code>PlantGrowth</code>).</li>
+<li>Split data into control and treatment groups.</li>
+<li>Perform t-test (<code>t.test()</code>).</li>
+<li>Interpret p-value.</li>
+</ol>
+<p><strong>R Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;PlantGrowth&quot;</span><span class="p">)</span>
+
+<span class="c1"># Subset Treatment 2</span>
+<span class="n">treatment2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span><span class="n">PlantGrowth</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;trt2&quot;</span><span class="p">)</span>
+
+<span class="c1"># T-Test</span>
+<span class="n">t_test_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">t.test</span><span class="p">(</span><span class="n">treatment2</span><span class="o">$</span><span class="n">weight</span><span class="p">,</span><span class="w"> </span><span class="n">mu</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">PlantGrowth</span><span class="o">$</span><span class="n">weight</span><span class="p">))</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">t_test_result</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>4B: Chi-Square Test on Customer Satisfaction</strong></h3>
+<ol>
+<li>Create contingency table.</li>
+<li>Perform chi-square test (<code>chisq.test()</code>).</li>
+<li>Interpret p-value.</li>
+</ol>
+<p><strong>R Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create Contingency Table</span>
+<span class="n">contract_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">109</span><span class="p">,</span><span class="m">141</span><span class="p">,</span><span class="m">94</span><span class="p">,</span><span class="m">180</span><span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">colnames</span><span class="p">(</span><span class="n">contract_table</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Satisfied&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Unsatisfied&quot;</span><span class="p">)</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">contract_table</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Stable&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Dynamic&quot;</span><span class="p">)</span>
+<span class="n">contract_table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.table</span><span class="p">(</span><span class="n">contract_table</span><span class="p">)</span>
+
+<span class="c1"># Perform Chi-Square Test</span>
+<span class="n">chi_test</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">chisq.test</span><span class="p">(</span><span class="n">contract_table</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">chi_test</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>4C: Linear Regression on longley Dataset</strong></h3>
+<ol>
+<li>Load <code>longley</code> dataset.</li>
+<li>Fit linear regression (<code>lm()</code>).</li>
+<li>Compute MSE (<code>mean()</code>).</li>
+<li>Predict population for future years.</li>
+<li>Plot regression line.</li>
+</ol>
+<p><strong>R Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;longley&quot;</span><span class="p">)</span>
+
+<span class="c1"># Linear Regression Model</span>
+<span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">Population</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">Year</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="o">=</span><span class="n">longley</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="c1"># Compute MSE</span>
+<span class="n">preds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">longley</span><span class="p">)</span>
+<span class="n">mse</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">((</span><span class="n">longley</span><span class="o">$</span><span class="n">Population</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">preds</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">cat</span><span class="p">(</span><span class="s">&quot;MSE:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mse</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+
+<span class="c1"># Predict Population for 1963-1967</span>
+<span class="n">new_years</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">Year</span><span class="o">=</span><span class="m">1963</span><span class="o">:</span><span class="m">1967</span><span class="p">)</span>
+<span class="n">predicted_population</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">new_years</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">predicted_population</span><span class="p">)</span>
+
+<span class="c1"># Scatter Plot + Regression Line</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">longley</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Year</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">Population</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">&quot;lm&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">se</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span>
+</code></pre></div>
+
+<h3><strong>4D: Gradient Descent for Linear Regression</strong></h3>
+<ol>
+<li>Implement gradient descent algorithm.</li>
+<li>Update parameters using learning rate.</li>
+<li>Plot cost reduction.</li>
+</ol>
+<p><strong>R Code:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Gradient Descent Function</span>
+<span class="n">LR_GradientDescent</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+<span class="w">  </span><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">y_pred</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+<span class="w">    </span><span class="n">grad_m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">-</span><span class="nf">sum</span><span class="p">((</span><span class="n">yy</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">xx</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">grad_b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="o">-</span><span class="nf">sum</span><span class="p">(</span><span class="n">yy</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">grad_m</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">grad_b</span>
+<span class="w">    </span><span class="n">cost</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">((</span><span class="n">yy</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">2</span>
+<span class="w">    </span><span class="nf">cat</span><span class="p">(</span><span class="s">&quot;Iteration:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="s">&quot; Cost:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">cost</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="s">&quot; Slope:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="s">&quot; Intercept:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="m">3</span><span class="p">),</span><span class="w"> </span><span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nf">return</span><span class="p">(</span><span class="nf">list</span><span class="p">(</span><span class="s">&quot;slope&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;intercept&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="c1"># Load Dataset</span>
+<span class="n">x_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">longley</span><span class="o">$</span><span class="n">Year</span>
+<span class="n">y_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">longley</span><span class="o">$</span><span class="n">GNP</span>
+<span class="n">xx</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">x_data</span><span class="p">)</span>
+<span class="n">yy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">y_data</span><span class="p">)</span>
+
+<span class="c1"># Apply Gradient Descent</span>
+<span class="n">lr_gd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">LR_GradientDescent</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span><span class="w"> </span><span class="n">yy</span><span class="p">,</span><span class="w"> </span><span class="m">0.01</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">)</span>
+
+<span class="c1"># Plot Regression Line</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">longley</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Year</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">GNP</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_abline</span><span class="p">(</span><span class="n">slope</span><span class="o">=</span><span class="n">lr_gd</span><span class="o">$</span><span class="n">slope</span><span class="p">,</span><span class="w"> </span><span class="n">intercept</span><span class="o">=</span><span class="n">lr_gd</span><span class="o">$</span><span class="n">intercept</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h3><strong>🚀 Summary</strong></h3>
+<ul>
+<li><strong>PCA:</strong> <code>prcomp()</code>, scree plots, variance analysis.  </li>
+<li><strong>Classification:</strong> Confusion matrix, ROC curves, thresholding.  </li>
+<li><strong>Statistical Tests:</strong> T-test, chi-square test.   </li>
+<li><strong>Regression:</strong> Linear model, MSE, predictions.  </li>
+<li><strong>Gradient Descent:</strong> Implementing from scratch.  </li>
+</ul>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>

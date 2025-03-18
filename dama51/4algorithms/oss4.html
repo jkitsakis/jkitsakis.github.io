@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>OSS4 - Machine Learning Algorithms.</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="Decision Trees, Random Forest, Naive Bayes, Logistic Regression, Linear Regression, and k-Nearest Neighbors" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+ class="active"><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/4algorithms/oss4.html" rel="bookmark"
+             title="Permalink to OSS4 - Machine Learning Algorithms.">OSS4 - Machine Learning Algorithms.</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <h3><strong>Summary of Discussed Aspects and Analysis</strong></h3>
+<p>The document appears to be a transcript of a lecture or discussion on <strong>machine learning concepts</strong>, specifically focusing on <strong>classification algorithms</strong>. Below is a structured summary and analysis of the key aspects:</p>
+<hr>
+<h2><strong>1. Supervised vs. Unsupervised Learning</strong></h2>
+<ul>
+<li><strong>Supervised Learning</strong>: Involves training a model with labeled data where the class labels are known.  </li>
+<li><strong>Unsupervised Learning</strong>: Clustering methods like K-Means attempt to group data without prior class labels.  </li>
+<li><strong>Analysis</strong>: The discussion highlights the fundamental difference—supervised learning has explicit targets, while unsupervised learning finds hidden patterns.  </li>
+</ul>
+<p>Before diving into the algorithms, it's essential to understand the difference:  </p>
+<table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>Supervised Learning</strong></th>
+<th><strong>Unsupervised Learning</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definition</strong></td>
+<td>Uses labeled data (i.e., inputs mapped to correct outputs)</td>
+<td>Uses unlabeled data, finding patterns autonomously</td>
+</tr>
+<tr>
+<td><strong>Example Algorithms</strong></td>
+<td>Decision Trees, Naive Bayes, Logistic Regression, Linear Regression, KNN, Random Forest</td>
+<td>K-Means Clustering, DBSCAN, Hierarchical Clustering</td>
+</tr>
+<tr>
+<td><strong>Use Cases</strong></td>
+<td>Spam detection, Loan approval, Disease prediction</td>
+<td>Customer segmentation, Anomaly detection</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2><strong>2. Decision Trees &amp; Entropy</strong></h2>
+<p><strong>Concepts Discussed</strong>:</p>
+<ul>
+<li>Decision trees rely on splitting data using <strong>entropy</strong> and <strong>information gain</strong>.</li>
+<li>Shannon entropy measures the level of uncertainty in a dataset.</li>
+<li>Example: Classifying animals based on attributes like the number of legs or wings.</li>
+<li>The <strong>Gini index</strong> is an alternative impurity measure used in decision trees.</li>
+<li>Decision trees form the basis of <strong>Random Forests</strong>, which use multiple trees to improve accuracy.  <ul>
+<li><strong>Analysis</strong>: Decision trees are powerful and interpretable but can overfit data. The transition to <strong>random forests</strong> addresses overfitting by aggregating multiple trees.</li>
+</ul>
+</li>
+</ul>
+<p>A <strong>Decision Tree</strong> is a <strong>hierarchical model</strong> that classifies data by splitting it based on feature values.  </p>
+<h3><strong>How It Works</strong></h3>
+<ol>
+<li>Starts at the root node (entire dataset).  </li>
+<li>Splits data based on the feature that provides the <strong>best separation</strong> (measured by <strong>entropy</strong> or <strong>Gini index</strong>).  </li>
+<li>Repeats recursively until reaching <strong>leaf nodes</strong> (pure classes).  </li>
+</ol>
+<h3><strong>Key Concepts</strong></h3>
+<ul>
+<li><strong>Entropy (Shannon Entropy)</strong>: Measures uncertainty in a dataset.  </li>
+</ul>
+<p>\[
+  H(X) = - \sum P(x) \log_2 P(x)
+  \]
+- <strong>Information Gain</strong>: Reduction in entropy after a split.<br>
+- <strong>Gini Index</strong>: Measures impurity, used in <strong>CART (Classification and Regression Trees)</strong>.  </p>
+<h3><strong>Pros &amp; Cons</strong></h3>
+<p>✅ <strong>Advantages</strong><br>
+✔ Easy to interpret.<br>
+✔ Handles both numerical &amp; categorical data.<br>
+✔ No need for feature scaling.  </p>
+<p>❌ <strong>Disadvantages</strong><br>
+✘ Prone to <strong>overfitting</strong> (can grow too deep).<br>
+✘ Sensitive to noisy data.  </p>
+<h3><strong>Real-World Applications</strong></h3>
+<ul>
+<li><strong>Medical Diagnosis</strong> (e.g., Is a tumor malignant or benign?)  </li>
+<li><strong>Loan Approval Systems</strong>  </li>
+<li><strong>Fraud Detection</strong>  </li>
+</ul>
+<hr>
+<h2><strong>Random Forest</strong></h2>
+<p><strong>⚡ Solution to Overfitting:</strong> Use <strong>Random Forests</strong> (ensemble of multiple trees).  </p>
+<p>A <strong>Random Forest</strong> is an <strong>ensemble method</strong> that builds multiple decision trees and aggregates their predictions.  </p>
+<h3><strong>How It Works</strong></h3>
+<ol>
+<li>Creates multiple <strong>randomized decision trees</strong>.  </li>
+<li>Each tree is trained on a <strong>random subset</strong> of the dataset.  </li>
+<li>For classification, <strong>majority voting</strong> is used.  </li>
+<li>For regression, <strong>average prediction</strong> is used.  </li>
+</ol>
+<h3><strong>Pros &amp; Cons</strong></h3>
+<p>✅ <strong>Advantages</strong><br>
+✔ More accurate than a single decision tree.<br>
+✔ <strong>Reduces overfitting</strong>.<br>
+✔ Works well with missing data.  </p>
+<p>❌ <strong>Disadvantages</strong><br>
+✘ Computationally expensive.<br>
+✘ Harder to interpret than a single tree.  </p>
+<h3><strong>Real-World Applications</strong></h3>
+<ul>
+<li><strong>Stock Market Predictions</strong>  </li>
+<li><strong>Image Classification</strong>  </li>
+<li><strong>Healthcare (Disease Diagnosis)</strong>  </li>
+</ul>
+<hr>
+<h2><strong>3. Naive Bayes Classifier</strong></h2>
+<ul>
+<li>
+<p><strong>Key Discussion Points</strong>:  </p>
+<ul>
+<li>Based on <strong>Bayes' Theorem</strong>.</li>
+<li>Assumes <strong>independence</strong> between features.</li>
+<li>Example: Spam classification using words like "offer" and "discount".</li>
+<li>Calculation of <strong>prior probabilities</strong>, <strong>likelihoods</strong>, and <strong>evidence</strong>.</li>
+<li>Example exercise on classifying individuals based on income and work status.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis</strong>:  </p>
+<ul>
+<li>Naive Bayes is simple and efficient but relies on <strong>strong independence assumptions</strong>, which may not always hold in real-world data.</li>
+<li>While not always accurate, it serves as a <strong>baseline model</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>A <strong>Naive Bayes classifier</strong> is a <strong>probabilistic model</strong> based on <strong>Bayes' Theorem</strong>.</p>
+<h3><strong>Bayes' Theorem</strong></h3>
+<p>\[
+P(A|B) = \frac{P(B|A) P(A)}{P(B)}
+\]
+- <strong>\( P(A|B) \)</strong>: Probability of A given B (Posterior)<br>
+- <strong>\( P(B|A) \)</strong>: Probability of B given A (Likelihood)<br>
+- <strong>\( P(A) \)</strong>: Prior probability of A<br>
+- <strong>\( P(B) \)</strong>: Prior probability of B  </p>
+<h3><strong>Key Assumption</strong></h3>
+<ul>
+<li><strong>Features are independent</strong> → unrealistic in real-world data.  </li>
+</ul>
+<h3><strong>Types of Naive Bayes</strong></h3>
+<ul>
+<li><strong>Gaussian Naive Bayes</strong> (for continuous data)  </li>
+<li><strong>Multinomial Naive Bayes</strong> (for text classification)  </li>
+<li><strong>Bernoulli Naive Bayes</strong> (for binary classification)  </li>
+</ul>
+<h3><strong>Pros &amp; Cons</strong></h3>
+<p>✅ <strong>Advantages</strong><br>
+✔ <strong>Very fast</strong> for large datasets.<br>
+✔ Works well with <strong>text data</strong> (Spam detection).<br>
+✔ Handles missing values well.  </p>
+<p>❌ <strong>Disadvantages</strong><br>
+✘ <strong>Strong independence assumption</strong> (rarely holds in reality).<br>
+✘ <strong>Not good for correlated features</strong>.  </p>
+<h3><strong>Real-World Applications</strong></h3>
+<ul>
+<li><strong>Spam Classification</strong> (Gmail uses Naive Bayes)  </li>
+<li><strong>Sentiment Analysis</strong>  </li>
+<li><strong>Medical Diagnosis</strong>  </li>
+</ul>
+<hr>
+<h2><strong>4. Logistic Regression</strong></h2>
+<ul>
+<li>
+<p><strong>Concepts Discussed</strong>:</p>
+<ul>
+<li>Used for <strong>binary classification</strong> (e.g., pass/fail, spam/not spam).</li>
+<li>Uses the <strong>sigmoid (logistic) function</strong> to convert predictions into probabilities.</li>
+<li>Discussion of <strong>odds ratio</strong> and <strong>log-odds transformation</strong>.</li>
+<li>Example: Predicting student exam success based on study hours.</li>
+<li><strong>Threshold-based classification</strong> (above/below 0.5).</li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>Logistic regression is <strong>interpretable</strong> and effective for simple problems.</li>
+<li>However, it <strong>struggles with complex relationships</strong>, requiring feature engineering or nonlinear models.</li>
+</ul>
+</li>
+</ul>
+<p>Logistic Regression is used for <strong>binary classification</strong> problems.</p>
+<h3><strong>How It Works</strong></h3>
+<ol>
+<li>Uses a <strong>logistic (sigmoid) function</strong> to map values to a probability range (0 to 1).  </li>
+<li>If <strong>\( P(Y=1) &gt; 0.5 \)</strong> → classify as <strong>1</strong> (positive class).  </li>
+<li>If <strong>\( P(Y=1) &lt; 0.5 \)</strong> → classify as <strong>0</strong> (negative class).  </li>
+</ol>
+<h3><strong>Sigmoid Function</strong></h3>
+<p>\[
+\sigma(x) = \frac{1}{1 + e^{-x}}
+\]</p>
+<h3><strong>Pros &amp; Cons</strong></h3>
+<p>✅ <strong>Advantages</strong><br>
+✔ Simple and interpretable.<br>
+✔ Computationally efficient.  </p>
+<p>❌ <strong>Disadvantages</strong><br>
+✘ Assumes <strong>linear decision boundary</strong> (not suitable for complex data).<br>
+✘ <strong>Doesn't work well with outliers</strong>.  </p>
+<h3><strong>Real-World Applications</strong></h3>
+<ul>
+<li><strong>Disease Prediction (COVID-19, Cancer)</strong>  </li>
+<li><strong>Customer Churn Prediction</strong>  </li>
+<li><strong>Credit Scoring</strong>  </li>
+</ul>
+<hr>
+<h2><strong>5. Linear Regression &amp; Gradient Descent</strong></h2>
+<ul>
+<li>
+<p><strong>Key Takeaways</strong>:</p>
+<ul>
+<li><strong>Linear regression</strong> models the relationship between dependent &amp; independent variables.</li>
+<li>Uses <strong>sum of squared errors (SSE)</strong> to find the best-fitting line.</li>
+<li><strong>Gradient Descent</strong> minimizes the cost function iteratively.</li>
+<li><strong>Convex functions</strong> ensure a global minimum.</li>
+<li>Example: Predicting housing prices based on square footage.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>Linear regression is useful for <strong>continuous predictions</strong> but assumes a <strong>linear relationship</strong>.</li>
+<li>Gradient descent is necessary for <strong>large datasets</strong> where direct calculations are expensive.</li>
+</ul>
+</li>
+</ul>
+<p>Linear regression models the relationship between <strong>independent variables (X)</strong> and <strong>dependent variables (Y)</strong>.</p>
+<h3><strong>Equation</strong></h3>
+<p>\[
+  Y = A + B \cdot X
+  \]</p>
+<ul>
+<li><strong>\( A \)</strong>: Intercept  </li>
+<li><strong>\( B \)</strong>: Slope  </li>
+</ul>
+<h3><strong>Gradient Descent</strong></h3>
+<ul>
+<li>Optimizes the model by minimizing <strong>Mean Squared Error (MSE)</strong>:
+  \[
+  MSE = \frac{1}{n} \sum (Y_{true} - Y_{pred})^2
+  \]</li>
+</ul>
+<h3><strong>Pros &amp; Cons</strong></h3>
+<p>✅ <strong>Advantages</strong><br>
+✔ Works well with <strong>linear data</strong>.<br>
+✔ Easy to interpret.  </p>
+<p>❌ <strong>Disadvantages</strong><br>
+✘ <strong>Assumes linear relationships</strong> (not always true).<br>
+✘ Sensitive to <strong>outliers</strong>.  </p>
+<h3><strong>Real-World Applications</strong></h3>
+<ul>
+<li><strong>Housing Price Prediction</strong>  </li>
+<li><strong>Stock Market Trends</strong>  </li>
+<li><strong>Advertising Spend vs. Revenue</strong>  </li>
+</ul>
+<hr>
+<h2><strong>6. k-Nearest Neighbors (KNN)</strong></h2>
+<ul>
+<li>
+<p><strong>Discussion Highlights</strong>:</p>
+<ul>
+<li>KNN stores all training examples and predicts based on similarity (distance-based).</li>
+<li>Often referred to as a <strong>"lazy learner"</strong> since it does not generalize beyond training data.</li>
+<li>Sensitive to <strong>outliers</strong> and requires <strong>choosing k wisely</strong>.</li>
+<li>Computational cost grows with <strong>dataset size</strong>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Analysis</strong>:</p>
+<ul>
+<li>KNN is <strong>simple but computationally expensive</strong> for large datasets.</li>
+<li>Works well in low-dimensional problems but suffers from the <strong>curse of dimensionality</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>KNN is a <strong>lazy learning algorithm</strong> that <strong>stores</strong> the dataset and makes predictions based on similarity.</p>
+<h3><strong>How It Works</strong></h3>
+<ol>
+<li>Choose <strong>k</strong> (number of neighbors).  </li>
+<li>Compute <strong>Euclidean Distance</strong> between test point and training points.  </li>
+<li>Assign the majority label from the <strong>k-nearest neighbors</strong>.  </li>
+</ol>
+<h3><strong>Pros &amp; Cons</strong></h3>
+<p>✅ <strong>Advantages</strong><br>
+✔ Simple and effective.<br>
+✔ No need for training (instance-based).  </p>
+<p>❌ <strong>Disadvantages</strong><br>
+✘ <strong>Computationally expensive</strong> (bad for large datasets).<br>
+✘ Sensitive to <strong>outliers</strong>.  </p>
+<h3><strong>Real-World Applications</strong></h3>
+<ul>
+<li><strong>Recommendation Systems (Netflix, Spotify)</strong>  </li>
+<li><strong>Handwriting Recognition</strong>  </li>
+<li><strong>Anomaly Detection</strong>  </li>
+</ul>
+<hr>
+<h2><strong>Final Thoughts</strong></h2>
+<ul>
+<li>The discussion covers <strong>core machine learning algorithms</strong> with a focus on <strong>classification</strong> and <strong>regression</strong>.</li>
+<li>Highlights strengths and weaknesses of <strong>Decision Trees, Naive Bayes, Logistic Regression, Linear Regression, and KNN</strong>.</li>
+<li>Addresses practical issues such as <strong>overfitting, feature dependencies, and computational complexity</strong>.</li>
+</ul>
+<h3><strong>Comparison Table</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Algorithm</th>
+<th>Type</th>
+<th>Strengths</th>
+<th>Weaknesses</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decision Trees</td>
+<td>Classification</td>
+<td>Interpretable, No scaling needed</td>
+<td>Overfitting</td>
+</tr>
+<tr>
+<td>Random Forest</td>
+<td>Classification</td>
+<td>Robust, High Accuracy</td>
+<td>Slow for big data</td>
+</tr>
+<tr>
+<td>Naive Bayes</td>
+<td>Classification</td>
+<td>Fast, Works well with text</td>
+<td>Assumes feature independence</td>
+</tr>
+<tr>
+<td>Logistic Regression</td>
+<td>Classification</td>
+<td>Simple, Interpretable</td>
+<td>Struggles with non-linear data</td>
+</tr>
+<tr>
+<td>Linear Regression</td>
+<td>Regression</td>
+<td>Easy to interpret</td>
+<td>Sensitive to outliers</td>
+</tr>
+<tr>
+<td>KNN</td>
+<td>Classification</td>
+<td>Works well with simple data</td>
+<td>Slow, requires tuning</td>
+</tr>
+</tbody>
+</table>
+<hr>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>

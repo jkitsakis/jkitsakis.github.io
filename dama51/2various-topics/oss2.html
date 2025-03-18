@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>OSS2 - Advanced Data Analysis</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="Transcript drom OSS2" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+ class="active"><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/2various-topics/oss2.html" rel="bookmark"
+             title="Permalink to OSS2 - Advanced Data Analysis">OSS2 - Advanced Data Analysis</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <p>The document discusses several key topics in data analysis. Here’s a structured list with simple explanations:</p>
+<p>Here’s an organized breakdown of the data analysis topics covered in your document, along with simple explanations for each:</p>
+<h3><strong>1. Principal Component Analysis (PCA)</strong></h3>
+<ul>
+<li><strong>Concept:</strong> A dimensionality reduction technique that transforms data into a new coordinate system.</li>
+<li><strong>Key Points:</strong><ul>
+<li>Reduces the number of features while retaining maximum variance.</li>
+<li>Helps in visualization when dealing with high-dimensional data.</li>
+<li>Uses <strong>eigenvectors</strong> and <strong>eigenvalues</strong> to determine principal components.</li>
+<li>Standardization (mean = 0, variance = 1) improves PCA effectiveness.</li>
+<li>Example: Applied to the <strong>Iris dataset</strong> to visualize feature relationships.</li>
+</ul>
+</li>
+</ul>
+<h3><strong>2. Confusion Matrix and Classification Metrics</strong></h3>
+<ul>
+<li><strong>Concept:</strong> A table used to evaluate the performance of a classification model.</li>
+<li><strong>Key Points:</strong><ul>
+<li><strong>True Positives (TP):</strong> Correctly predicted positive cases.</li>
+<li><strong>False Positives (FP):</strong> Incorrectly predicted positive cases (Type I error).</li>
+<li><strong>False Negatives (FN):</strong> Incorrectly predicted negative cases (Type II error).</li>
+<li><strong>True Negatives (TN):</strong> Correctly predicted negative cases.</li>
+<li>Metrics:</li>
+<li><strong>Sensitivity (Recall):</strong> TP / (TP + FN) – ability to identify positive cases.</li>
+<li><strong>Specificity:</strong> TN / (TN + FP) – ability to identify negative cases.</li>
+<li><strong>Precision:</strong> TP / (TP + FP) – reliability of positive predictions.</li>
+<li><strong>Accuracy:</strong> (TP + TN) / Total – overall model performance.</li>
+<li><strong>F1-score:</strong> Balance between precision and recall.</li>
+<li><strong>Example:</strong> Used in COVID-19 classification problems.</li>
+</ul>
+</li>
+</ul>
+<h3><strong>3. ROC Curve &amp; AUC (Receiver Operating Characteristic Curve)</strong></h3>
+<ul>
+<li><strong>Concept:</strong> A graphical representation of classification model performance across different thresholds.</li>
+<li><strong>Key Points:</strong><ul>
+<li><strong>True Positive Rate (TPR)</strong> vs <strong>False Positive Rate (FPR).</strong></li>
+<li><strong>Optimal threshold</strong> balances sensitivity and specificity.</li>
+<li><strong>Area Under Curve (AUC):</strong> Measures overall model effectiveness.</li>
+<li><strong>Example:</strong> Used to fine-tune decision thresholds in medical diagnosis.</li>
+</ul>
+</li>
+</ul>
+<h3><strong>4. Gradient Descent Optimization</strong></h3>
+<ul>
+<li><strong>Concept:</strong> An iterative optimization algorithm to minimize an error function.</li>
+<li><strong>Key Points:</strong><ul>
+<li>Moves in the opposite direction of the gradient to find the <strong>global minimum</strong>.</li>
+<li>Uses <strong>learning rate (step size)</strong> to control movement speed.</li>
+<li><strong>Convex functions</strong> are ideal for minimization.</li>
+<li>Can be applied to neural networks for parameter tuning.</li>
+<li>Example: Used for optimizing error functions in machine learning models.</li>
+</ul>
+</li>
+</ul>
+<h3><strong>5. Linear Regression</strong></h3>
+<ul>
+<li><strong>Concept:</strong> A statistical method to predict a dependent variable based on an independent variable.</li>
+<li><strong>Key Points:</strong><ul>
+<li>Finds the <strong>best-fit line</strong> that minimizes errors.</li>
+<li>Uses the formula <strong>Y = aX + b</strong> (where <code>a</code> is slope, <code>b</code> is intercept).</li>
+<li><strong>Least Squares Method</strong> minimizes the sum of squared errors.</li>
+<li><strong>Gradient Descent</strong> is an alternative method for optimization.</li>
+<li><strong>Example:</strong> Predicting house prices based on square footage.</li>
+</ul>
+</li>
+</ul>
+<h3><strong>6. Logistic Regression</strong></h3>
+<ul>
+<li><strong>Concept:</strong> A classification algorithm for predicting binary outcomes.</li>
+<li><strong>Key Points:</strong><ul>
+<li>Uses a <strong>sigmoid function</strong> to map outputs between 0 and 1.</li>
+<li>Often used in <strong>binary classification</strong> problems.</li>
+<li>Outputs a probability that is converted to a class label (0 or 1).</li>
+<li><strong>Example:</strong> Used for medical diagnosis (disease vs no disease).</li>
+</ul>
+</li>
+</ul>
+<h3><strong>7. Hypothesis Testing</strong></h3>
+<ul>
+<li><strong>Concept:</strong> A statistical method to test assumptions about data.</li>
+<li><strong>Key Points:</strong><ul>
+<li><strong>Null Hypothesis (H₀):</strong> Assumption that there is no effect.</li>
+<li><strong>Alternative Hypothesis (H₁):</strong> Assumption that there is an effect.</li>
+<li>Uses <strong>p-values</strong> to determine statistical significance.</li>
+<li><strong>Example:</strong> Testing if a new drug significantly reduces weight.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Further in-depth analysis on each topic along with <strong>R code examples</strong> for better understanding.</h2>
+<h2><strong>1. Principal Component Analysis (PCA)</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<p>PCA is used in scenarios where:
+- There are too many features in a dataset, making computations expensive.
+- Some features are highly correlated, leading to redundant information.
+- You want to visualize high-dimensional data in 2D or 3D.</p>
+<h3><strong>Mathematical Foundation</strong></h3>
+<ul>
+<li>PCA finds a new set of <strong>orthogonal axes (principal components)</strong>.</li>
+<li>The first principal component (PC1) captures the most variance.</li>
+<li>The second principal component (PC2) is perpendicular to PC1 and captures the next highest variance.</li>
+<li>Eigenvalues determine how much variance each principal component explains.</li>
+<li>The <strong>covariance matrix</strong> helps in computing the eigenvectors and eigenvalues.</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<p>Let’s perform PCA on the <strong>Iris dataset</strong> in R:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span>
+
+<span class="c1"># Remove categorical variable</span>
+<span class="n">iris_numeric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iris</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">]</span><span class="w">  </span>
+
+<span class="c1"># Standardizing the data (important for PCA)</span>
+<span class="n">iris_scaled</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">iris_numeric</span><span class="p">)</span>
+
+<span class="c1"># Perform PCA</span>
+<span class="n">pca_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="n">iris_scaled</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Summary of PCA</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">pca_result</span><span class="p">)</span>
+
+<span class="c1"># Plot the variance explained by each principal component</span>
+<span class="nf">screeplot</span><span class="p">(</span><span class="n">pca_result</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;lines&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Scree Plot&quot;</span><span class="p">)</span>
+
+<span class="c1"># Biplot of PCA</span>
+<span class="nf">biplot</span><span class="p">(</span><span class="n">pca_result</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
+</code></pre></div>
+
+<p><strong>Key Insights:</strong>
+- The <strong>scree plot</strong> shows how much variance each component captures.
+- The <strong>biplot</strong> visualizes the principal components with the original feature directions.
+- PCA is useful in reducing the number of dimensions while retaining important information.</p>
+<hr>
+<h2><strong>2. Feature Selection and Data Compression</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<ul>
+<li><strong>Feature Selection</strong>: Choosing a subset of relevant features based on statistical significance.</li>
+<li><strong>Dimensionality Reduction</strong>: Transforming features into a lower-dimensional representation (e.g., PCA, Autoencoders).</li>
+<li><strong>Compression Example</strong>: PCA can be used for image compression by keeping only the most significant components.</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<p>Compress an image using PCA:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">jpeg</span><span class="p">)</span>
+
+<span class="c1"># Read an image</span>
+<span class="n">img</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readJPEG</span><span class="p">(</span><span class="s">&quot;example.jpg&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert image to grayscale</span>
+<span class="n">gray_img</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">img</span><span class="p">[,,</span><span class="m">1</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">img</span><span class="p">[,,</span><span class="m">2</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">img</span><span class="p">[,,</span><span class="m">3</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="m">3</span>
+
+<span class="c1"># Perform PCA</span>
+<span class="n">pca_img</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="n">gray_img</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Reconstruct image using only top components</span>
+<span class="n">compressed_img</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">pca_img</span><span class="o">$</span><span class="n">x</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">50</span><span class="p">]</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">pca_img</span><span class="o">$</span><span class="n">rotation</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">50</span><span class="p">])</span>
+
+<span class="c1"># Plot original and compressed images</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="nf">image</span><span class="p">(</span><span class="n">gray_img</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gray</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="o">/</span><span class="m">255</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Original Image&quot;</span><span class="p">)</span>
+<span class="nf">image</span><span class="p">(</span><span class="n">compressed_img</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">gray</span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">255</span><span class="o">/</span><span class="m">255</span><span class="p">),</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Compressed Image&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This demonstrates how PCA helps in compressing data while retaining most of the useful information.</p>
+<hr>
+<h2><strong>3. Data Visualization and Eigenvectors</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<ul>
+<li>Eigenvectors <strong>represent directions</strong> of maximum variance.</li>
+<li>Eigenvalues <strong>indicate how important</strong> each eigenvector is.</li>
+<li>In PCA, eigenvectors help in transforming data into a new coordinate system.</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Compute covariance matrix</span>
+<span class="n">cov_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cov</span><span class="p">(</span><span class="n">iris_scaled</span><span class="p">)</span>
+
+<span class="c1"># Compute eigenvectors and eigenvalues</span>
+<span class="n">eigen_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">eigen</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">)</span>
+
+<span class="c1"># Print eigenvalues</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">eigen_result</span><span class="o">$</span><span class="n">values</span><span class="p">)</span>
+
+<span class="c1"># Print eigenvectors</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">eigen_result</span><span class="o">$</span><span class="n">vectors</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This helps understand how PCA selects directions of maximum variance.</p>
+<hr>
+<h2><strong>4. Confusion Matrix and Classification Metrics</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<ul>
+<li><strong>Precision</strong>: \( TP / (TP + FP) \) - How many of the predicted positives are actual positives?</li>
+<li><strong>Recall (Sensitivity)</strong>: \( TP / (TP + FN) \) - How many actual positives are correctly predicted?</li>
+<li><strong>F1-Score</strong>: Harmonic mean of precision and recall.</li>
+<li><strong>Specificity</strong>: \( TN / (TN + FP) \) - How many actual negatives are correctly predicted?</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<p>Perform classification using a decision tree and compute a confusion matrix:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">caret</span><span class="p">)</span>
+
+<span class="c1"># Create a binary classification problem</span>
+<span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ifelse</span><span class="p">(</span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;setosa&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Setosa&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Other&quot;</span><span class="p">)</span>
+
+<span class="c1"># Split dataset</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">trainIndex</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">createDataPartition</span><span class="p">(</span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.7</span><span class="p">,</span><span class="w"> </span><span class="n">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="n">trainData</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iris</span><span class="p">[</span><span class="n">trainIndex</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+<span class="n">testData</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">iris</span><span class="p">[</span><span class="o">-</span><span class="n">trainIndex</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+
+<span class="c1"># Train a model</span>
+<span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="n">Species</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trainData</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;rpart&quot;</span><span class="p">)</span>
+
+<span class="c1"># Make predictions</span>
+<span class="n">predictions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">testData</span><span class="p">)</span>
+
+<span class="c1"># Compute confusion matrix</span>
+<span class="nf">confusionMatrix</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span><span class="w"> </span><span class="n">testData</span><span class="o">$</span><span class="n">Species</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This evaluates model performance using <strong>true positives, false positives, etc.</strong></p>
+<hr>
+<h2><strong>5. Gradient Descent and Optimization</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<ul>
+<li><strong>Gradient Descent</strong> updates parameters iteratively to minimize the error function.</li>
+<li><strong>Learning Rate</strong>: Determines the step size in each update.</li>
+<li><strong>Batch Gradient Descent</strong>: Uses the entire dataset in each iteration.</li>
+<li><strong>Stochastic Gradient Descent (SGD)</strong>: Uses one data point at a time.</li>
+<li><strong>Mini-batch Gradient Descent</strong>: Uses small batches for optimization.</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<p>Implement gradient descent for linear regression:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate data</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">x</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">)</span>
+<span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">3</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span>
+
+<span class="c1"># Initialize parameters</span>
+<span class="n">theta0</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
+<span class="n">theta1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
+<span class="n">alpha</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0.01</span><span class="w">  </span><span class="c1"># Learning rate</span>
+<span class="n">iterations</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1000</span>
+
+<span class="c1"># Gradient descent loop</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">iterations</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">predictions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">theta0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">theta1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span>
+<span class="w">  </span><span class="n">error</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">predictions</span>
+
+<span class="w">  </span><span class="c1"># Compute gradients</span>
+<span class="w">  </span><span class="n">theta0</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">theta0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="w">  </span><span class="n">theta1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">theta1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">alpha</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">error</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Print final parameters</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">theta0</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This finds the best-fit line by minimizing the error.</p>
+<hr>
+<h2><strong>6. Linear Regression and Least Squares Optimization</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<ul>
+<li><strong>Linear regression</strong> models the relationship between a dependent variable and independent variables.</li>
+<li>The <strong>least squares method</strong> minimizes the sum of squared differences between actual and predicted values.</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Fit linear model</span>
+<span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Print model summary</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+<span class="c1"># Plot regression line</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Linear Regression&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">16</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p>This provides the regression coefficients and evaluates model fit.</p>
+<hr>
+<h2><strong>7. Hypothesis Testing and Model Evaluation</strong></h2>
+<h3><strong>Further Analysis</strong></h3>
+<ul>
+<li><strong>Null Hypothesis (H0)</strong>: No effect or relationship.</li>
+<li><strong>Alternative Hypothesis (H1)</strong>: There is a significant effect.</li>
+<li><strong>p-value</strong>: If ( p &lt; 0.05 ), we reject the null hypothesis.</li>
+<li><strong>t-test</strong>: Used to compare means.</li>
+</ul>
+<h3><strong>Example in R</strong></h3>
+<p>Perform a t-test:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">t.test</span><span class="p">(</span><span class="n">iris</span><span class="o">$</span><span class="n">Sepal.Length</span><span class="p">[</span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;setosa&quot;</span><span class="p">],</span><span class="w"> </span>
+<span class="w">       </span><span class="n">iris</span><span class="o">$</span><span class="n">Sepal.Length</span><span class="p">[</span><span class="n">iris</span><span class="o">$</span><span class="n">Species</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;versicolor&quot;</span><span class="p">])</span>
+</code></pre></div>
+
+<p>This tests if there is a significant difference in Sepal Length between <strong>Setosa and Versicolor</strong> species.</p>
+<hr>
+<h2><strong>Final Thoughts</strong></h2>
+<p>These examples demonstrate the practical applications of PCA, classification metrics, gradient descent, regression, and hypothesis testing in R. </p>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>

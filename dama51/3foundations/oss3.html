@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>OSS3 - Predictive Modeling, Clustering Techniques, Similarity Measures, and Association Rule Mining</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="Machine Learning Foundations: Regression, Classification, Clustering, Distance Metrics, and Data Mining Techniques" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+ class="active"><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/3foundations/oss3.html" rel="bookmark"
+             title="Permalink to OSS3 - Predictive Modeling, Clustering Techniques, Similarity Measures, and Association Rule Mining">OSS3 - Predictive Modeling, Clustering Techniques, Similarity Measures, and Association Rule Mining</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <hr>
+<h1><strong>Comprehensive Guide to Machine Learning Topics</strong></h1>
+<hr>
+<h2><strong>1. Predictive Modeling</strong></h2>
+<p>Predictive modeling is used to analyze historical data and make future predictions.</p>
+<h3><strong>1.1 Regression</strong></h3>
+<p>Regression is used when the output variable is continuous.</p>
+<h4><strong>Types of Regression</strong></h4>
+<ul>
+<li><strong>Linear Regression</strong>: Models the relationship between variables with a straight line.</li>
+<li>Example: Predicting house prices based on size.</li>
+<li>Formula:<br>
+    \[
+    y = mx + b
+    \]</li>
+<li>Where:<ul>
+<li>\( y \) = dependent variable (output)</li>
+<li>\( x \) = independent variable (input)</li>
+<li>\( m \) = slope of the line</li>
+<li>\( b \) = intercept</li>
+</ul>
+</li>
+<li><strong>Polynomial Regression</strong>: Models curved relationships.</li>
+<li><strong>Ridge &amp; Lasso Regression</strong>: Add penalties to prevent overfitting.</li>
+</ul>
+<h4><strong>Use Cases</strong></h4>
+<ul>
+<li>Predicting sales revenue.</li>
+<li>Forecasting stock prices.</li>
+</ul>
+<hr>
+<h3><strong>1.2 Classification</strong></h3>
+<p>Classification is used when the output variable belongs to predefined categories.</p>
+<h4><strong>Types of Classification Algorithms</strong></h4>
+<ul>
+<li><strong>Logistic Regression</strong>: Used for binary classification (e.g., spam vs. non-spam).</li>
+<li><strong>Decision Trees &amp; Random Forests</strong>: Used for complex decision-making.</li>
+<li><strong>Support Vector Machines (SVMs)</strong>: Effective in high-dimensional spaces.</li>
+<li><strong>Neural Networks</strong>: Used in deep learning.</li>
+</ul>
+<h4><strong>Use Cases</strong></h4>
+<ul>
+<li>Medical diagnosis (disease vs. no disease).</li>
+<li>Email spam filtering.</li>
+</ul>
+<hr>
+<h3><strong>1.3 Supervised vs. Unsupervised Learning</strong></h3>
+<ul>
+<li><strong>Supervised Learning</strong>: Uses labeled data.</li>
+<li><strong>Unsupervised Learning</strong>: Finds hidden patterns without predefined labels.</li>
+</ul>
+<hr>
+<h2><strong>2. Measuring Similarity &amp; Distance</strong></h2>
+<h3><strong>2.1 Similarity Measures</strong></h3>
+<ul>
+<li><strong>Cosine Similarity</strong>: Used in text processing.</li>
+<li>Example: Comparing two documents to see if they discuss the same topic.</li>
+<li><strong>Jaccard Similarity</strong>: Used to compare two sets.</li>
+<li>Example: Recommending similar products based on past purchases.</li>
+</ul>
+<h3><strong>2.2 Distance Measures</strong></h3>
+<ul>
+<li><strong>Euclidean Distance</strong>: The straight-line distance between two points.</li>
+<li><strong>Manhattan Distance</strong>: Measures distance in a grid-like pattern.</li>
+<li><strong>Minkowski Distance</strong>: Generalizes both Euclidean and Manhattan distances.</li>
+<li><strong>Hamming Distance</strong>: Used for text or binary data (e.g., DNA sequences).</li>
+</ul>
+<hr>
+<h2><strong>3. Clustering Algorithms</strong></h2>
+<p>Clustering groups data points that share similar characteristics.</p>
+<h3><strong>3.1 Hierarchical Clustering</strong></h3>
+<ul>
+<li><strong>Agglomerative</strong>: Starts with individual points and merges them.</li>
+<li><strong>Divisive</strong>: Starts with one large cluster and splits it.</li>
+</ul>
+<h3><strong>3.2 Linkage Methods</strong></h3>
+<ul>
+<li><strong>Single Linkage</strong>: Uses the closest point in each cluster.</li>
+<li><strong>Complete Linkage</strong>: Uses the farthest point.</li>
+<li><strong>Centroid Linkage</strong>: Uses the cluster center.</li>
+</ul>
+<hr>
+<h2><strong>4. K-Means Clustering</strong></h2>
+<p>A widely used clustering method that partitions data into “K” groups.</p>
+<h3><strong>4.1 Steps in K-Means</strong></h3>
+<ol>
+<li>Choose the number of clusters \( K \).</li>
+<li>Randomly initialize \( K \) centroids.</li>
+<li>Assign each point to the nearest centroid.</li>
+<li>Recalculate centroids.</li>
+<li>Repeat until the centroids no longer change.</li>
+</ol>
+<h3><strong>4.2 Choosing the Right K</strong></h3>
+<ul>
+<li><strong>Elbow Method</strong>: Plots variance against \( K \) to find the optimal number of clusters.</li>
+</ul>
+<hr>
+<h2><strong>5. Gaussian Mixture Models (GMM)</strong></h2>
+<p>A clustering method that assumes data is generated from multiple Gaussian distributions.</p>
+<h3><strong>5.1 Soft Clustering</strong></h3>
+<ul>
+<li><strong>Hard Clustering (K-Means)</strong>: Each data point belongs to one cluster.</li>
+<li><strong>Soft Clustering (GMM)</strong>: Each data point has probabilities of belonging to multiple clusters.</li>
+</ul>
+<h3><strong>5.2 Expectation-Maximization (EM) Algorithm</strong></h3>
+<ol>
+<li><strong>Expectation Step (E-Step)</strong>: Assigns probabilities for each point.</li>
+<li><strong>Maximization Step (M-Step)</strong>: Updates parameters.</li>
+</ol>
+<hr>
+<h2><strong>6. Density-Based Clustering (DBSCAN)</strong></h2>
+<p>A clustering method that identifies dense clusters and outliers.</p>
+<h3><strong>6.1 Advantages</strong></h3>
+<ul>
+<li>No need to specify the number of clusters.</li>
+<li>Works well with irregularly shaped clusters.</li>
+<li>Identifies noise points.</li>
+</ul>
+<h3><strong>6.2 Key Concepts</strong></h3>
+<ul>
+<li><strong>Core Points</strong>: Have enough neighbors to form a cluster.</li>
+<li><strong>Border Points</strong>: Fall within a core point’s neighborhood but don’t have enough neighbors.</li>
+<li><strong>Noise Points</strong>: Are not part of any cluster.</li>
+</ul>
+<hr>
+<h2><strong>7. Association Rule Learning</strong></h2>
+<p>Finds relationships between items in large datasets.</p>
+<h3><strong>7.1 Concepts</strong></h3>
+<ul>
+<li><strong>Support</strong>: Frequency of an itemset.</li>
+<li><strong>Confidence</strong>: Probability that item \( Y \) is bought given \( X \) is bought.</li>
+<li><strong>Lift</strong>: Measures the strength of a rule.</li>
+</ul>
+<h3><strong>7.2 Apriori Algorithm</strong></h3>
+<ol>
+<li>Finds frequent item sets.</li>
+<li>Generates association rules.</li>
+<li>Uses <strong>anti-monotone property</strong>: If an itemset is infrequent, all its supersets are also infrequent.</li>
+</ol>
+<h4><strong>Example</strong></h4>
+<ul>
+<li>"People who buy milk and bread are likely to buy butter."</li>
+</ul>
+<hr>
+<h2><strong>8. Dimensionality Reduction</strong></h2>
+<p>Reduces the number of features in a dataset while retaining important information.</p>
+<h3><strong>8.1 Principal Component Analysis (PCA)</strong></h3>
+<ul>
+<li>Projects high-dimensional data onto fewer dimensions.</li>
+<li>Keeps as much variance as possible.</li>
+</ul>
+<h3><strong>8.2 t-SNE</strong></h3>
+<ul>
+<li>A non-linear technique for visualizing high-dimensional data.</li>
+</ul>
+<hr>
+<h2><strong>Final Thoughts</strong></h2>
+<p>This guide provides a detailed breakdown of key machine learning concepts. Let me know if you need more details or explanations on specific parts! 🚀</p>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>

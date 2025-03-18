@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>Fundamental Machine Learning Algorithms from TM4.pdf Notes</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="Decision Trees, Random Forest, Naive Bayes, Logistic Regression, Linear Regression, and k-Nearest Neighbors" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+ class="active"><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/4algorithms/algorithms.html" rel="bookmark"
+             title="Permalink to Fundamental Machine Learning Algorithms from TM4.pdf Notes">Fundamental Machine Learning Algorithms from TM4.pdf Notes</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <p>The topics of <strong>machine learning and data analysis</strong> covered seem to focus on the following key areas:</p>
+<p>The TM4 tutorial meeting document from the Hellenic Open University covers several fundamental machine learning algorithms. Here's a breakdown of the key algorithms mentioned:</p>
+<h3><strong>1. Decision Trees</strong></h3>
+<ul>
+<li>Used for both classification and regression tasks.</li>
+<li>Structure:</li>
+<li>Nodes: Decision points based on attribute values.</li>
+<li>Leaves: Final classification or decision.</li>
+<li>Branches: Different outcomes of a decision.</li>
+<li><strong>Popular Decision Tree Algorithms:</strong></li>
+<li><strong>ID3 (Iterative Dichotomiser 3)</strong> – Uses entropy and information gain for attribute selection.</li>
+<li><strong>C4.5 &amp; C5.0</strong> – Improvements over ID3, handling continuous values and pruning.</li>
+<li><strong>CART (Classification and Regression Trees)</strong> – Uses the Gini index for splitting.</li>
+</ul>
+<hr>
+<h3><strong>2. Bayes Classifiers</strong></h3>
+<ul>
+<li>Based on <strong>Bayes' Theorem</strong>, which calculates the probability of a class given a set of features.</li>
+<li><strong>Naïve Bayes</strong>:</li>
+<li>Assumes independence between features.</li>
+<li>Works well for text classification (e.g., spam detection).</li>
+<li><strong>Limitation</strong>: Assumption of independence rarely holds in real-world data.</li>
+</ul>
+<hr>
+<h3><strong>3. Regression</strong></h3>
+<ul>
+<li>Used for predicting continuous values.</li>
+<li><strong>Linear Regression</strong>:</li>
+<li>Finds the best fit line by minimizing the sum of squared errors.</li>
+<li>Can be solved using <strong>closed-form solutions (Normal Equation)</strong> or <strong>Gradient Descent</strong>.</li>
+<li><strong>Logistic Regression</strong>:</li>
+<li>Used for classification (binary/multiclass).</li>
+<li>Uses the <strong>sigmoid function</strong> to model probabilities.</li>
+</ul>
+<hr>
+<h3><strong>4. Nearest-Neighbor Predictors (k-NN)</strong></h3>
+<ul>
+<li>A <strong>lazy learning algorithm</strong> (stores all training data).</li>
+<li><strong>Classification</strong>: Assigns the majority class among k nearest neighbors.</li>
+<li><strong>Regression</strong>: Averages the values of k nearest neighbors.</li>
+<li><strong>Challenges</strong>:</li>
+<li>Sensitive to noisy data.</li>
+<li>High computational cost with large datasets.</li>
+</ul>
+<hr>
+<h4><strong>5. Entropy &amp; Information Gain (Feature Selection)</strong></h4>
+<ul>
+<li>Used in decision tree algorithms like <strong>ID3, C4.5, and C5.0</strong>.</li>
+<li><strong>Shannon Entropy</strong>:</li>
+<li>Measures impurity in a dataset.</li>
+<li>Lower entropy means purer nodes.</li>
+<li><strong>Information Gain</strong>:</li>
+<li>Measures reduction in entropy after a split.</li>
+<li>Used to select the best attribute for decision tree splitting.</li>
+</ul>
+<hr>
+<h4><strong>6. Gini Index (Used in Decision Trees)</strong></h4>
+<ul>
+<li>Used by <strong>CART (Classification and Regression Trees)</strong> instead of entropy.</li>
+<li>Measures impurity:</li>
+<li>Lower values indicate purer nodes.</li>
+<li>Common in classification problems.</li>
+</ul>
+<hr>
+<h4><strong>7. Gain Ratio (Quinlan 1986/1993)</strong></h4>
+<ul>
+<li>Improvement over information gain.</li>
+<li>Adjusts for attributes with many values.</li>
+<li>Used in <strong>C4.5 Decision Trees</strong>.</li>
+</ul>
+<hr>
+<h4><strong>8. Minimum Description Length (MDL) Principle</strong></h4>
+<ul>
+<li>Based on <strong>Occam’s Razor</strong>: Prefer the simplest hypothesis.</li>
+<li>Used in <strong>Decision Tree Pruning</strong> to avoid overfitting.</li>
+</ul>
+<hr>
+<h4><strong>9. Pruning Techniques (Overfitting Reduction)</strong></h4>
+<ul>
+<li><strong>Pre-Pruning</strong>: Stops tree growth early based on conditions.</li>
+<li><strong>Post-Pruning</strong>: Trims the fully grown tree based on evaluation metrics.</li>
+<li><strong>Reduced-Error Pruning</strong>: Removes branches that don’t improve accuracy.</li>
+<li><strong>Pessimistic Pruning</strong>: Assumes unseen data would behave similarly.</li>
+</ul>
+<hr>
+<h4><strong>10. Lazy Learning vs. Eager Learning</strong></h4>
+<ul>
+<li><strong>Lazy Learning (e.g., k-NN)</strong>: Stores data and makes predictions when queried.</li>
+<li><strong>Eager Learning (e.g., Decision Trees, Regression)</strong>: Builds a model before making predictions.</li>
+</ul>
+<hr>
+<h4><strong>11. Splitting on Numerical Attributes (Handling Continuous Data)</strong></h4>
+<ul>
+<li>Converts numerical features into categorical ones.</li>
+<li>Uses thresholding and binning techniques.</li>
+</ul>
+<hr>
+<h4><strong>12. Missing Value Handling</strong></h4>
+<ul>
+<li>Replace missing values with:</li>
+<li>The <strong>most frequent</strong> value in a class.</li>
+<li><strong>Mean/Median</strong> for numerical values.</li>
+<li>A <strong>placeholder category</strong> if missing values are frequent.</li>
+</ul>
+<hr>
+<h4><strong>13. k-Nearest Neighbors (k-NN) Enhancements</strong></h4>
+<ul>
+<li><strong>Distance Metrics</strong>:</li>
+<li><strong>Euclidean Distance</strong> (default)</li>
+<li><strong>Manhattan Distance</strong> (for grid-based data)</li>
+<li><strong>Minkowski Distance</strong> (generalized form)</li>
+<li><strong>Weighted k-NN</strong>: Assigns more influence to closer neighbors.</li>
+<li><strong>Choosing Optimal k</strong>:</li>
+<li>Cross-validation to avoid overfitting (low k) and underfitting (high k).</li>
+</ul>
+<hr>
+<h3><strong>Key Takeaways</strong></h3>
+<ul>
+<li>The tutorial discusses <strong>supervised learning</strong> algorithms with a focus on <strong>classification and regression</strong>.</li>
+<li><strong>Decision Trees, Bayes Classifiers, Regression, and k-NN</strong> are the primary models.</li>
+<li><strong>Feature selection</strong> (Entropy, Gini Index, Gain Ratio) and <strong>pruning</strong> are crucial for optimizing models.</li>
+<li><strong>Handling numerical attributes and missing values</strong> is essential for real-world applications.</li>
+</ul>
+<hr>
+<h3><strong>What You Need to Know About These Algorithms</strong></h3>
+<p>To effectively use the algorithms covered in TM4, you should understand their <strong>strengths, weaknesses, applications, and key concepts</strong>. Below is a structured breakdown:</p>
+<hr>
+<h2><strong>📌 1. Decision Trees</strong></h2>
+<p><strong>🔹 Key Concepts:</strong>
+- <strong>Tree Structure</strong>: Nodes (decisions), branches (outcomes), leaves (final classification).
+- <strong>Splitting Criteria</strong>:<br>
+  - <strong>Entropy &amp; Information Gain (ID3, C4.5)</strong> → Choose attributes that reduce entropy the most.<br>
+  - <strong>Gini Index (CART)</strong> → Measures impurity of a node; lower is better.<br>
+  - <strong>Gain Ratio (C4.5 improvement)</strong> → Adjusts for biased splits with many categories.  </p>
+<p><strong>🔹 Handling Issues:</strong><br>
+- <strong>Overfitting?</strong> Use <strong>pruning techniques</strong> (pre-pruning stops early, post-pruning trims after full growth).<br>
+- <strong>Numerical Data?</strong> Convert into categorical (e.g., threshold-based splits).<br>
+- <strong>Missing Values?</strong> Replace with the most common or mean value in the same class.  </p>
+<p><strong>🔹 When to Use?</strong>
+✔️ When you need an <strong>interpretable model</strong> (e.g., medical decisions).<br>
+✔️ When features are a <strong>mix of categorical and numerical</strong>.<br>
+❌ Not ideal for <strong>large datasets</strong> (deep trees can be slow).</p>
+<hr>
+<h2><strong>📌 2. Bayes Classifiers</strong> (Naïve Bayes)</h2>
+<p><strong>🔹 Key Concepts:</strong>
+- <strong>Uses Bayes’ Theorem</strong>:<br>
+  \[
+  P(Class|Data) = \frac{P(Data|Class) P(Class)}{P(Data)}
+  \]<br>
+- <strong>Naïve Assumption</strong>: Features are independent given the class (often unrealistic).<br>
+- <strong>Works well with text data (Spam filtering, Sentiment Analysis).</strong>  </p>
+<p><strong>🔹 When to Use?</strong><br>
+✔️ When working with <strong>high-dimensional data</strong> (e.g., text classification).<br>
+✔️ When you need a <strong>fast and simple</strong> classifier.<br>
+❌ Fails when <strong>features are correlated</strong> (independence assumption breaks).  </p>
+<hr>
+<h2><strong>📌 3. Regression (Linear &amp; Logistic)</strong></h2>
+<p><strong>🔹 Linear Regression</strong> (for continuous outputs):<br>
+- Fits a <strong>straight-line equation</strong>:<br>
+  \[
+  y = mx + b
+  \]
+- Uses <strong>least squares method</strong> to minimize prediction error.</p>
+<p><strong>🔹 Logistic Regression</strong> (for classification):<br>
+- Predicts probabilities using the <strong>sigmoid function</strong>:<br>
+  \[
+  P(y=1) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x)}}
+  \]
+- Used for <strong>binary classification</strong>.</p>
+<p><strong>🔹 When to Use?</strong><br>
+✔️ Linear Regression: When relationships are approximately <strong>linear</strong> (e.g., predicting house prices). <br>
+✔️ Logistic Regression: When predicting <strong>binary outcomes</strong> (e.g., pass/fail, fraud detection). <br>
+❌ Doesn’t work well with <strong>non-linear</strong> relationships.  </p>
+<hr>
+<h2><strong>📌 4. Nearest-Neighbor Predictors (k-NN)</strong></h2>
+<p><strong>🔹 Key Concepts:</strong><br>
+- <strong>Lazy learner</strong> → No training phase; stores data and classifies based on closest points.<br>
+- Uses <strong>distance metrics</strong>:<br>
+  - <strong>Euclidean Distance</strong> (default) → Best for continuous features.<br>
+  - <strong>Manhattan Distance</strong> → Better for grid-based data.  </p>
+<p><strong>🔹 Tuning k (number of neighbors)</strong>:<br>
+- <strong>Small k?</strong> Leads to overfitting (high variance).<br>
+- <strong>Large k?</strong> Leads to underfitting (too generic).  </p>
+<p><strong>🔹 When to Use?</strong><br>
+✔️ When <strong>data is small</strong> and you need a <strong>non-parametric model</strong>.<br>
+✔️ Good for <strong>pattern recognition</strong> (e.g., handwriting recognition).<br>
+❌ Not great for <strong>large datasets</strong> (slow lookups).  </p>
+<hr>
+<h2><strong>📌 5. Feature Selection Metrics (Entropy, Gini, Gain Ratio)</strong></h2>
+<p><strong>🔹 Why?</strong> Avoid irrelevant features that slow models down.<br>
+- <strong>Entropy &amp; Information Gain</strong>: Picks attributes that reduce disorder.<br>
+- <strong>Gini Index</strong>: Works similarly but focuses on purity of groups.<br>
+- <strong>Gain Ratio</strong>: Adjusts information gain to prevent bias toward attributes with many values.</p>
+<p><strong>🔹 When to Use?</strong><br>
+✔️ Before building Decision Trees or other models to improve efficiency.<br>
+✔️ When dealing with <strong>many categorical features</strong>.  </p>
+<hr>
+<h2><strong>📌 6. Model Optimization (Pruning &amp; Overfitting Control)</strong></h2>
+<p><strong>🔹 Avoiding Overfitting in Decision Trees</strong>:<br>
+- <strong>Pre-pruning</strong>: Stop splitting if information gain is small.<br>
+- <strong>Post-pruning</strong>: Cut back parts of the tree if they don’t generalize well.  </p>
+<p><strong>🔹 In k-NN:</strong><br>
+- Reduce overfitting by <strong>increasing k</strong> (but not too much).  </p>
+<p><strong>🔹 In Regression:</strong><br>
+- Use <strong>regularization techniques</strong> like Ridge or Lasso regression.  </p>
+<hr>
+<h2><strong>📌 7. Handling Missing Values</strong></h2>
+<ul>
+<li><strong>Replace with Most Frequent Value</strong> (for categorical data).  </li>
+<li><strong>Mean/Median Imputation</strong> (for numerical data).  </li>
+<li><strong>Drop Rows</strong> if too many values are missing.  </li>
+</ul>
+<hr>
+<h2><strong>📌 8. Key Differences Between Lazy &amp; Eager Learning</strong></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example Algorithms</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lazy Learning</strong></td>
+<td>No training phase; stores data and makes predictions on demand.</td>
+<td>k-NN</td>
+</tr>
+<tr>
+<td><strong>Eager Learning</strong></td>
+<td>Builds a model before predictions.</td>
+<td>Decision Trees, Regression</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><strong>🚀 Practical Summary: What to Focus On</strong></h3>
+<ol>
+<li><strong>Understand the types of problems these models solve</strong>:  <ul>
+<li><strong>Regression</strong> → Predicts continuous values.  </li>
+<li><strong>Classification</strong> → Predicts discrete labels.  </li>
+</ul>
+</li>
+<li><strong>Know when to use pruning &amp; regularization</strong> to avoid overfitting.  </li>
+<li><strong>Choose the right metric for feature selection</strong> (Entropy, Gini, Gain Ratio).  </li>
+<li><strong>For large datasets</strong>, prefer eager learners (decision trees, regression) over k-NN.  </li>
+<li><strong>Optimize hyperparameters</strong> like:  <ul>
+<li><strong>k</strong> in k-NN.  </li>
+<li><strong>Depth &amp; pruning strategy</strong> in decision trees.  </li>
+<li><strong>Regularization strength</strong> in regression.  </li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3><strong>Would You Like...</strong></h3>
+<p>✅ <strong>Code examples for each algorithm?</strong>  <br>
+✅ <strong>A comparison with deep learning models?</strong>  <br>
+✅ <strong>How to implement them in Python (Scikit-learn, TensorFlow, etc.)?</strong>  </p>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="generator" content="Pelican"/>
+    <title>Topics Analysis from HW3.docx</title>
+    <link rel="stylesheet" href="/dama51/theme/css/main.css"/>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [["$", "$"], ["\\(", "\\)"]],
+                displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: "global"
+            },
+            options: {
+                enableMenu: false  // Disable right-click MathJax menu
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+        <meta name="description" content="HW3" />
+</head>
+
+<style>
+    :root {
+        --background-image-uri: url("/dama51/images/background.png");
+    }
+</style>
+
+
+<body id="index" class="home">
+<header id="banner" class="body">
+    <h1><a href="/dama51/">DAMA51</a>
+    </h1>
+    <nav>
+        <ul>
+            <li
+><a href="/dama51/1introduction.html">1.Introduction</a></li>
+            <li
+><a href="/dama51/2various-topics.html">2.Various Topics</a></li>
+            <li
+ class="active"><a href="/dama51/3foundations.html">3.Foundations</a></li>
+            <li
+><a href="/dama51/4algorithms.html">4.Algorithms</a></li>
+        </ul>
+    </nav>
+</header><!-- /#banner -->
+
+<section id="content" class="body">
+  <article>
+      <header>
+        <h1 class="entry-title">
+          <a href="/dama51/3foundations/hw3.html" rel="bookmark"
+             title="Permalink to Topics Analysis from HW3.docx">Topics Analysis from HW3.docx</a></h1>
+      </header>
+
+      <div class="entry-content">
+        <p>Based on the provided document, the following topics in <strong>Machine Learning (ML)</strong> and <strong>Data Analysis (DA)</strong> are covered in <strong>Homework 3</strong>. These topics collectively provide a solid foundation in ML and DA, covering both <strong>supervised</strong> and <strong>unsupervised</strong> learning techniques along with key <strong>data preprocessing and exploratory analysis</strong> methods.:</p>
+<h3><strong>Machine Learning Topics:</strong></h3>
+<ol>
+<li>
+<p><strong>Feature Selection &amp; Linear Regression</strong> (Supervised Learning)</p>
+<ul>
+<li>Correlation analysis for feature selection</li>
+<li>Building and evaluating a linear regression model (R-squared, MAE)</li>
+<li>Standardization (Z-score normalization)</li>
+<li>Model predictions and de-normalization</li>
+</ul>
+</li>
+<li>
+<p><strong>Hierarchical Clustering</strong> (Unsupervised Learning)</p>
+<ul>
+<li>Distance calculations (Euclidean distance)</li>
+<li>Single and complete linkage methods</li>
+<li>Dendrogram visualization</li>
+<li>Cluster analysis (cutting dendrograms and analyzing cluster properties)</li>
+</ul>
+</li>
+<li>
+<p><strong>Prototype-based and K-Means Clustering</strong> (Unsupervised Learning)</p>
+<ul>
+<li>Min-max normalization</li>
+<li>Elbow method for optimal k determination</li>
+<li>Applying k-means clustering</li>
+<li>Principal Component Analysis (PCA) for dimensionality reduction before clustering</li>
+<li>Visualization of clusters after PCA transformation</li>
+</ul>
+</li>
+<li>
+<p><strong>Association Rule Mining</strong> (Unsupervised Learning)</p>
+<ul>
+<li>Frequent itemset mining using the Apriori algorithm</li>
+<li>Extracting and ranking association rules based on lift</li>
+<li>Visualizing association rules</li>
+</ul>
+</li>
+</ol>
+<h3><strong>Data Analysis Topics:</strong></h3>
+<ol>
+<li>
+<p><strong>Exploratory Data Analysis (EDA)</strong></p>
+<ul>
+<li>Reading and preprocessing datasets</li>
+<li>Handling categorical and numeric variables</li>
+<li>Calculating correlations and statistical summaries</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Standardization &amp; Normalization</strong></p>
+<ul>
+<li>Z-score standardization</li>
+<li>Min-max normalization</li>
+</ul>
+</li>
+<li>
+<p><strong>Data Visualization</strong></p>
+<ul>
+<li>Heatmaps for correlation matrices</li>
+<li>Dendrograms for hierarchical clustering</li>
+<li>Bar charts and scatter plots for regression analysis</li>
+<li>Graph-based visualization of association rules</li>
+</ul>
+</li>
+<li>
+<p><strong>Distance Metrics &amp; Similarity Analysis</strong></p>
+<ul>
+<li>Pairwise dissimilarity calculations in hierarchical clustering</li>
+</ul>
+</li>
+</ol>
+<h3><strong>Structured Approach to Solving Each Task in R (Per Topic)</strong></h3>
+<p>Below is a step-by-step structured approach for each topic in <strong>DAMA51 Homework 3</strong>, including the necessary R functions and key implementation details.</p>
+<hr>
+<h2><strong>Topic 2: Feature Selection &amp; Linear Regression</strong></h2>
+<h3><strong>Step 1: Load and Preprocess Data</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load dataset interactively</span>
+<span class="n">housing_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="nf">file.choose</span><span class="p">())</span>
+
+<span class="c1"># Select only numeric variables</span>
+<span class="n">house_prices_numeric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">housing_data</span><span class="p">[,</span><span class="w"> </span><span class="nf">sapply</span><span class="p">(</span><span class="n">housing_data</span><span class="p">,</span><span class="w"> </span><span class="n">is.numeric</span><span class="p">)]</span>
+
+<span class="c1"># Standardize data (Z-score normalization)</span>
+<span class="n">house_prices_scaled</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">house_prices_numeric</span><span class="p">)</span>
+
+<span class="c1"># Compute correlation matrix</span>
+<span class="n">cor_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cor</span><span class="p">(</span><span class="n">house_prices_scaled</span><span class="p">)</span>
+
+<span class="c1"># Display correlation matrix</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cor_matrix</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>Step 2: Feature Selection</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Compute correlation with price</span>
+<span class="n">cor_price</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cor_matrix</span><span class="p">[,</span><span class="s">&quot;price&quot;</span><span class="p">]</span>
+
+<span class="c1"># Rank features by absolute correlation with price</span>
+<span class="n">selected_features</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor_price</span><span class="p">),</span><span class="w"> </span><span class="n">decreasing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">))[</span><span class="m">2</span><span class="o">:</span><span class="m">4</span><span class="p">]</span>
+
+<span class="c1"># Barplot for top 3 correlated features</span>
+<span class="nf">barplot</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">cor_price</span><span class="p">[</span><span class="n">selected_features</span><span class="p">]),</span><span class="w"> </span><span class="n">decreasing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">),</span>
+<span class="w">        </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Top 3 Features Correlated with Price&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steelblue&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>Step 3: Train Linear Regression Model</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build regression model using selected features</span>
+<span class="n">lm_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lm</span><span class="p">(</span><span class="n">price</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">.</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">house_prices_scaled</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">selected_features</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;price&quot;</span><span class="p">)])</span>
+
+<span class="c1"># Model summary</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">lm_model</span><span class="p">)</span>
+
+<span class="c1"># R-squared value</span>
+<span class="n">r_squared</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">lm_model</span><span class="p">)</span><span class="o">$</span><span class="n">r.squared</span>
+
+<span class="c1"># Compute Mean Absolute Error (MAE)</span>
+<span class="n">predictions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="n">lm_model</span><span class="p">,</span><span class="w"> </span><span class="n">newdata</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">house_prices_scaled</span><span class="p">)</span>
+<span class="n">mae</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">predictions</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">house_prices_scaled</span><span class="o">$</span><span class="n">price</span><span class="p">))</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;R-squared:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">r_squared</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;MAE:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">mae</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)))</span>
+</code></pre></div>
+
+<h3><strong>Step 4: De-normalization &amp; Visualization</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Retrieve original mean and SD for de-normalization</span>
+<span class="n">price_mean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">mean</span><span class="p">(</span><span class="n">housing_data</span><span class="o">$</span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">price_sd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sd</span><span class="p">(</span><span class="n">housing_data</span><span class="o">$</span><span class="n">price</span><span class="p">,</span><span class="w"> </span><span class="n">na.rm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># De-normalize predictions</span>
+<span class="n">denormalized_predictions</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="p">(</span><span class="n">predictions</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">price_sd</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">price_mean</span>
+
+<span class="c1"># Scatter plot of predicted vs actual</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">denormalized_predictions</span><span class="p">,</span><span class="w"> </span><span class="n">housing_data</span><span class="o">$</span><span class="n">price</span><span class="p">,</span><span class="w"> </span>
+<span class="w">     </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Predicted vs Actual Prices&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Predicted&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Actual&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>Topic 3: Hierarchical Clustering</strong></h2>
+<h3><strong>Step 1: Load Data &amp; Compute Dissimilarity Matrix</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+
+<span class="c1"># Standardize data</span>
+<span class="n">mtcars_scaled</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">mtcars</span><span class="p">)</span>
+
+<span class="c1"># Compute Euclidean distance</span>
+<span class="n">dist_matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dist</span><span class="p">(</span><span class="n">mtcars_scaled</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;euclidean&quot;</span><span class="p">)</span>
+
+<span class="c1"># Display distances between Mazda RX4 and Merc 450 cars</span>
+<span class="nf">subset</span><span class="p">(</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">),</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Mazda RX4&quot;</span><span class="p">,</span>
+<span class="w">       </span><span class="nf">colnames</span><span class="p">(</span><span class="nf">as.matrix</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">))</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Merc 450SE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Merc 450SL&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Merc 450SLC&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<h3><strong>Step 2: Hierarchical Clustering</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Perform clustering</span>
+<span class="n">hc_single</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hclust</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;single&quot;</span><span class="p">)</span>
+<span class="n">hc_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">hclust</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;complete&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot dendrograms</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">hc_single</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Single Linkage Clustering&quot;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">hc_complete</span><span class="p">,</span><span class="w"> </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Complete Linkage Clustering&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>Step 3: Cluster Analysis</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Cut dendrogram into 4 clusters</span>
+<span class="n">clusters_single</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cutree</span><span class="p">(</span><span class="n">hc_single</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+<span class="n">clusters_complete</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cutree</span><span class="p">(</span><span class="n">hc_complete</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+
+<span class="c1"># Count observations per cluster</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">clusters_single</span><span class="p">)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">clusters_complete</span><span class="p">)</span>
+
+<span class="c1"># Compute means of &#39;cyl&#39; and &#39;hp&#39; for Clusters 1 and 3</span>
+<span class="nf">aggregate</span><span class="p">(</span><span class="n">mtcars</span><span class="p">[,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;cyl&quot;</span><span class="p">,</span><span class="s">&quot;hp&quot;</span><span class="p">)],</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">Cluster</span><span class="o">=</span><span class="n">clusters_single</span><span class="p">),</span><span class="w"> </span><span class="n">mean</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>Topic 4: Prototype-based and k-means Clustering</strong></h2>
+<h3><strong>Step 1: Load &amp; Normalize Data</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load dataset</span>
+<span class="n">cancer_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.csv</span><span class="p">(</span><span class="nf">file.choose</span><span class="p">())</span>
+
+<span class="c1"># Drop ID and diagnosis columns</span>
+<span class="n">data_clean</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">cancer_data</span><span class="p">[,</span><span class="w"> </span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">)]</span>
+
+<span class="c1"># Min-max normalization</span>
+<span class="n">scaled_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">lapply</span><span class="p">(</span><span class="n">data_clean</span><span class="p">,</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">x</span><span class="p">))))</span>
+</code></pre></div>
+
+<h3><strong>Step 2: Determine Optimal k (Elbow Method)</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Compute Within-Cluster Sum of Squares (WCSS)</span>
+<span class="n">wcss</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="nf">kmeans</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="o">=</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">nstart</span><span class="o">=</span><span class="m">10</span><span class="p">)</span><span class="o">$</span><span class="n">tot.withinss</span><span class="p">)</span>
+
+<span class="c1"># Plot Elbow Curve</span>
+<span class="nf">plot</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">wcss</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="o">=</span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">,</span><span class="w"> </span><span class="n">frame</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span>
+<span class="w">     </span><span class="n">main</span><span class="o">=</span><span class="s">&quot;Elbow Method for Optimal k&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Number of clusters&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;WCSS&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>Step 3: Apply K-Means Clustering</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Apply k-means with k=5</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+<span class="n">kmeans_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kmeans</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">nstart</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
+
+<span class="c1"># Cluster sizes</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">kmeans_model</span><span class="o">$</span><span class="n">cluster</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>Step 4: PCA for Dimensionality Reduction</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Perform PCA</span>
+<span class="n">pca_result</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">prcomp</span><span class="p">(</span><span class="n">scaled_data</span><span class="p">,</span><span class="w"> </span><span class="n">center</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">scale.</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="c1"># Use first 2 principal components</span>
+<span class="n">pca_data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="n">pca_result</span><span class="o">$</span><span class="n">x</span><span class="p">[,</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">])</span>
+
+<span class="c1"># Apply K-means on PCA data</span>
+<span class="n">pca_kmeans</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">kmeans</span><span class="p">(</span><span class="n">pca_data</span><span class="p">,</span><span class="w"> </span><span class="n">centers</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">nstart</span><span class="o">=</span><span class="m">10</span><span class="p">)</span>
+
+<span class="c1"># Plot clusters</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">pca_data</span><span class="p">,</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">PC1</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="n">PC2</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">pca_kmeans</span><span class="o">$</span><span class="n">cluster</span><span class="p">)))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&quot;PCA-Based Clustering&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="o">=</span><span class="s">&quot;Cluster&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<hr>
+<h2><strong>Topic 5: Association Rules (Itemset Mining)</strong></h2>
+<h3><strong>Step 1: Load Data &amp; Perform Initial Analysis</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Load required library</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">arules</span><span class="p">)</span>
+
+<span class="c1"># Load dataset</span>
+<span class="nf">data</span><span class="p">(</span><span class="s">&quot;Groceries&quot;</span><span class="p">)</span>
+
+<span class="c1"># Summary statistics</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">Groceries</span><span class="p">)</span>
+
+<span class="c1"># Display top 5 most frequent items</span>
+<span class="nf">itemFrequencyPlot</span><span class="p">(</span><span class="n">Groceries</span><span class="p">,</span><span class="w"> </span><span class="n">topN</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;steelblue&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<h3><strong>Step 2: Apply Apriori Algorithm</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Apply Apriori algorithm with minimum support of 0.01</span>
+<span class="n">frequent_itemsets</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">apriori</span><span class="p">(</span><span class="n">Groceries</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="o">=</span><span class="s">&quot;frequent itemsets&quot;</span><span class="p">))</span>
+
+<span class="c1"># Display top 5 frequent itemsets</span>
+<span class="nf">inspect</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">frequent_itemsets</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;support&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">5</span><span class="p">))</span>
+</code></pre></div>
+
+<h3><strong>Step 3: Generate &amp; Visualize Association Rules</strong></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Generate rules with min confidence 0.5 and min support 0.01</span>
+<span class="n">rules</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">apriori</span><span class="p">(</span><span class="n">Groceries</span><span class="p">,</span><span class="w"> </span><span class="n">parameter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span><span class="w"> </span><span class="n">conf</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="o">=</span><span class="s">&quot;rules&quot;</span><span class="p">))</span>
+
+<span class="c1"># Display top 5 rules sorted by lift</span>
+<span class="nf">inspect</span><span class="p">(</span><span class="nf">head</span><span class="p">(</span><span class="nf">sort</span><span class="p">(</span><span class="n">rules</span><span class="p">,</span><span class="w"> </span><span class="n">by</span><span class="o">=</span><span class="s">&quot;lift&quot;</span><span class="p">),</span><span class="w"> </span><span class="m">5</span><span class="p">))</span>
+
+<span class="c1"># Visualize rules</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">arulesViz</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">rules</span><span class="p">,</span><span class="w"> </span><span class="n">method</span><span class="o">=</span><span class="s">&quot;graph&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">control</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">type</span><span class="o">=</span><span class="s">&quot;items&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+<hr>
+<h3><strong>Final Thoughts</strong></h3>
+<p>This structured approach ensures:<br>
+1. <strong>Consistency:</strong> All tasks follow a <strong>logical flow</strong> from <strong>loading data</strong> to <strong>modeling and evaluation</strong>.<br>
+2. <strong>Modularity:</strong> Each step can be run <strong>independently</strong> and <strong>modified</strong> if needed.<br>
+3. <strong>Visualization &amp; Interpretation:</strong> Key <strong>plots and tables</strong> are included for better insights.  </p>
+      </div><!-- /.entry-content -->
+  </article>
+</section>
+
+
+</body>
+</html>
