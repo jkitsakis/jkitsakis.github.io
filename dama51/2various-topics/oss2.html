@@ -23,8 +23,10 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-        <meta name="description" content="Transcript drom OSS2" />
+        <meta name="description" content="Transcript from OSS2" />
 </head>
 
 <style>
@@ -83,12 +85,14 @@
 <li><strong>False Positives (FP):</strong> Incorrectly predicted positive cases (Type I error).</li>
 <li><strong>False Negatives (FN):</strong> Incorrectly predicted negative cases (Type II error).</li>
 <li><strong>True Negatives (TN):</strong> Correctly predicted negative cases.</li>
-<li>Metrics:</li>
+<li>Metrics:<ul>
 <li><strong>Sensitivity (Recall):</strong> TP / (TP + FN) – ability to identify positive cases.</li>
 <li><strong>Specificity:</strong> TN / (TN + FP) – ability to identify negative cases.</li>
 <li><strong>Precision:</strong> TP / (TP + FP) – reliability of positive predictions.</li>
 <li><strong>Accuracy:</strong> (TP + TN) / Total – overall model performance.</li>
 <li><strong>F1-score:</strong> Balance between precision and recall.</li>
+</ul>
+</li>
 <li><strong>Example:</strong> Used in COVID-19 classification problems.</li>
 </ul>
 </li>
@@ -190,10 +194,10 @@
 <span class="nf">biplot</span><span class="p">(</span><span class="n">pca_result</span><span class="p">,</span><span class="w"> </span><span class="n">scale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="p">)</span>
 </code></pre></div>
 
-<p><strong>Key Insights:</strong>
-- The <strong>scree plot</strong> shows how much variance each component captures.
-- The <strong>biplot</strong> visualizes the principal components with the original feature directions.
-- PCA is useful in reducing the number of dimensions while retaining important information.</p>
+<p><strong>Key Insights:</strong><br>
+- The <strong>scree plot</strong> shows how much variance each component captures.<br>
+- The <strong>biplot</strong> visualizes the principal components with the original feature directions.<br>
+- PCA is useful in reducing the number of dimensions while retaining important information.  </p>
 <hr>
 <h2><strong>2. Feature Selection and Data Compression</strong></h2>
 <h3><strong>Further Analysis</strong></h3>
@@ -229,9 +233,9 @@
 <h2><strong>3. Data Visualization and Eigenvectors</strong></h2>
 <h3><strong>Further Analysis</strong></h3>
 <ul>
-<li>Eigenvectors <strong>represent directions</strong> of maximum variance.</li>
-<li>Eigenvalues <strong>indicate how important</strong> each eigenvector is.</li>
-<li>In PCA, eigenvectors help in transforming data into a new coordinate system.</li>
+<li>Eigenvectors <strong>represent directions</strong> of maximum variance.  </li>
+<li>Eigenvalues <strong>indicate how important</strong> each eigenvector is.  </li>
+<li>In PCA, eigenvectors help in transforming data into a new coordinate system.  </li>
 </ul>
 <h3><strong>Example in R</strong></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Compute covariance matrix</span>
@@ -364,5 +368,13 @@
 </section>
 
 
+
+<span class="fixed bottom-4 right-4 z-50">
+  <button id="goToTop" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</span>
+
+  <script type="text/javascript" src="/dama51/theme/js/go-to-top.js"></script>
 </body>
 </html>

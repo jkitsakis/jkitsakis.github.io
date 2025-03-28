@@ -23,6 +23,8 @@
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
         <meta name="description" content="HW4" />
 </head>
@@ -65,39 +67,49 @@
 <ol>
 <li>
 <p><strong>Decision Trees (ML)</strong></p>
+<blockquote>
 <ul>
 <li>Entropy and Information Gain calculations.</li>
 <li>Implementation of the ID3 algorithm in R.</li>
 <li>Building and visualizing a decision tree from a dataset.</li>
 </ul>
+</blockquote>
 </li>
 <li>
 <p><strong>Bayes Classifier (ML)</strong></p>
+<blockquote>
 <ul>
 <li>Probabilistic calculations for Naïve Bayes classification.</li>
 <li>Implementation of a Naïve Bayes classifier in R.</li>
 <li>Making predictions for new instances.</li>
 </ul>
+</blockquote>
 </li>
 <li>
 <p><strong>Itemset Mining &amp; Association Rules (DA/ML)</strong></p>
+<blockquote>
 <ul>
 <li>Frequent itemset analysis using the Apriori algorithm.</li>
 <li>Generating and analyzing association rules.</li>
 <li>Visualizing the rules using lift and network graphs.</li>
 </ul>
+</blockquote>
 </li>
 <li>
 <p><strong>Online Quiz</strong></p>
+<blockquote>
 <ul>
 <li>Likely covering general ML and DA concepts.</li>
 </ul>
+</blockquote>
 </li>
 <li>
 <p><strong>Project (Open-ended)</strong></p>
+<blockquote>
 <ul>
 <li>This could involve applying ML and DA techniques in a practical scenario.</li>
 </ul>
+</blockquote>
 </li>
 </ol>
 <p>The assignment involves both <strong>theoretical and practical implementation</strong> in <strong>R</strong>, requiring entropy calculations, probability derivations, and coding solutions for decision trees, Naïve Bayes classifiers, and association rule mining. Let me know if you need help with any specific topic!</p>
@@ -108,9 +120,11 @@
 <p><strong>Goal:</strong> Build a decision tree for the given dataset, compute entropy, information gain, and implement ID3 algorithm in R.</p>
 <h3><strong>Steps to Follow:</strong></h3>
 <ul>
-<li><strong>Load Dataset</strong><ul>
+<li><strong>Load Dataset</strong><blockquote>
+<ul>
 <li>Read <code>Tennis_final.csv</code> interactively.  </li>
 </ul>
+</blockquote>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">file_path</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">file.choose</span><span class="p">()</span><span class="w"> </span>
@@ -119,30 +133,34 @@
 </code></pre></div>
 
 <ul>
-<li><strong>Compute Entropy</strong><ul>
+<li><strong>Compute Entropy</strong><blockquote>
+<ul>
 <li>Define an entropy function using Shannon’s formula.</li>
 </ul>
+</blockquote>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">Entropy</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">vls</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">     </span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vls</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">vls</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">log2</span><span class="p">(</span><span class="n">vls</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">vls</span><span class="p">))</span>
-<span class="w">     </span><span class="n">res</span><span class="p">[</span><span class="n">vls</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
-<span class="w">     </span><span class="o">-</span><span class="nf">sum</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">vls</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">vls</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">log2</span><span class="p">(</span><span class="n">vls</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">vls</span><span class="p">))</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">res</span><span class="p">[</span><span class="n">vls</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">0</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="nf">sum</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 <span class="w">   </span><span class="p">}</span>
 </code></pre></div>
 
 <ul>
-<li><strong>Compute Information Gain for Each Attribute</strong><ul>
+<li><strong>Compute Information Gain for Each Attribute</strong><blockquote>
+<ul>
 <li>Define a function to calculate <strong>Information Gain (IG)</strong>.</li>
 </ul>
+</blockquote>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">InformationGain</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">table</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">     </span><span class="n">table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame.matrix</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-<span class="w">     </span><span class="n">entropyBefore</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Entropy</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
-<span class="w">     </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rowSums</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
-<span class="w">     </span><span class="n">entropyAfter</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">Entropy</span><span class="p">))</span>
-<span class="w">     </span><span class="n">entropyBefore</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">entropyAfter</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">table</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame.matrix</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">entropyBefore</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">Entropy</span><span class="p">(</span><span class="nf">colSums</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rowSums</span><span class="p">(</span><span class="n">table</span><span class="p">)</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">entropyAfter</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">table</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">Entropy</span><span class="p">))</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">entropyBefore</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">entropyAfter</span>
 <span class="w">   </span><span class="p">}</span>
 </code></pre></div>
 
@@ -152,27 +170,29 @@
 </li>
 <li>
 <p><strong>Implement the ID3 Algorithm</strong></p>
+<blockquote>
 <ul>
 <li>Create recursive decision tree construction.</li>
 </ul>
+</blockquote>
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">TrID3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">     </span><span class="n">node</span><span class="o">$</span><span class="n">obsCount</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="w">     </span><span class="nf">if </span><span class="p">(</span><span class="nf">IsPure</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">       </span><span class="n">child</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">node</span><span class="o">$</span><span class="nf">AddChild</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)]))</span>
-<span class="w">       </span><span class="n">child</span><span class="o">$</span><span class="n">obsCount</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="w">     </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">       </span><span class="n">ig</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sapply</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="o">-</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)],</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span>
-<span class="w">         </span><span class="nf">InformationGain</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="n">x</span><span class="p">],</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)])))</span>
-<span class="w">       </span><span class="n">feature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">ig</span><span class="p">)[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">ig</span><span class="p">)]</span>
-<span class="w">       </span><span class="n">node</span><span class="o">$</span><span class="n">feature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">feature</span>
-<span class="w">       </span><span class="n">childObs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">feature</span><span class="p">)],</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="n">feature</span><span class="p">])</span>
-<span class="w">       </span><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">childObs</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<span class="w">         </span><span class="n">child</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">node</span><span class="o">$</span><span class="nf">AddChild</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">childObs</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
-<span class="w">         </span><span class="nf">TrID3</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">childObs</span><span class="p">[[</span><span class="n">i</span><span class="p">]])</span>
-<span class="w">       </span><span class="p">}</span>
-<span class="w">     </span><span class="p">}</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="n">node</span><span class="o">$</span><span class="n">obsCount</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="nf">if </span><span class="p">(</span><span class="nf">IsPure</span><span class="p">(</span><span class="n">data</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="n">child</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">node</span><span class="o">$</span><span class="nf">AddChild</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)]))</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="n">child</span><span class="o">$</span><span class="n">obsCount</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">nrow</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="n">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="n">ig</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sapply</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)[</span><span class="o">-</span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)],</span><span class="w"> </span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">     </span><span class="nf">InformationGain</span><span class="p">(</span><span class="nf">table</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="n">x</span><span class="p">],</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="nf">ncol</span><span class="p">(</span><span class="n">data</span><span class="p">)])))</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="n">feature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">names</span><span class="p">(</span><span class="n">ig</span><span class="p">)[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">ig</span><span class="p">)]</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="n">node</span><span class="o">$</span><span class="n">feature</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">feature</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="n">childObs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">split</span><span class="p">(</span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="o">!</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">feature</span><span class="p">)],</span><span class="w"> </span><span class="n">data</span><span class="p">[,</span><span class="w"> </span><span class="n">feature</span><span class="p">])</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="nf">seq_along</span><span class="p">(</span><span class="n">childObs</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">     </span><span class="n">child</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">node</span><span class="o">$</span><span class="nf">AddChild</span><span class="p">(</span><span class="nf">names</span><span class="p">(</span><span class="n">childObs</span><span class="p">)[</span><span class="n">i</span><span class="p">])</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">     </span><span class="nf">TrID3</span><span class="p">(</span><span class="n">child</span><span class="p">,</span><span class="w"> </span><span class="n">childObs</span><span class="p">[[</span><span class="n">i</span><span class="p">]])</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="p">}</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w"> </span><span class="p">}</span>
 <span class="w">   </span><span class="p">}</span>
 </code></pre></div>
 
@@ -252,7 +272,7 @@
 <li><strong>Run the Apriori Algorithm</strong>  </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="w">   </span><span class="n">rules</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">apriori</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span><span class="w"> </span>
-<span class="w">                    </span><span class="n">parameter</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span><span class="w"> </span><span class="n">conf</span><span class="o">=</span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">minlen</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
+<span class="w">  </span><span class="o">&gt;</span><span class="w">   </span><span class="o">&gt;</span><span class="w">   </span><span class="o">&gt;</span><span class="w">   </span><span class="o">&gt;</span><span class="w"> </span><span class="n">parameter</span><span class="o">=</span><span class="nf">list</span><span class="p">(</span><span class="n">supp</span><span class="o">=</span><span class="m">0.01</span><span class="p">,</span><span class="w"> </span><span class="n">conf</span><span class="o">=</span><span class="m">0.4</span><span class="p">,</span><span class="w"> </span><span class="n">minlen</span><span class="o">=</span><span class="m">3</span><span class="p">))</span>
 </code></pre></div>
 
 <ul>
@@ -317,5 +337,13 @@
 </section>
 
 
+
+<span class="fixed bottom-4 right-4 z-50">
+  <button id="goToTop" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</span>
+
+  <script type="text/javascript" src="/dama51/theme/js/go-to-top.js"></script>
 </body>
 </html>
