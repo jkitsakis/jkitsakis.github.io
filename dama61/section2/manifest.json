@@ -1,0 +1,59 @@
+{
+  "section": 2,
+  "pages": [
+    {
+      "filename": "part1.html",
+      "title": "Section 2 — Part 1: Η έννοια της πρόβλεψης και η γραμμική παλινδρόμηση",
+      "headings": 23,
+      "lessons": 3
+    },
+    {
+      "filename": "part2.html",
+      "title": "Section 2 — Part 2: Gradient Descent — εκπαίδευση βήμα βήμα",
+      "headings": 22,
+      "lessons": 3
+    },
+    {
+      "filename": "part3.html",
+      "title": "Section 2 — Part 3: Πολυωνυμική παλινδρόμηση και γενίκευση",
+      "headings": 16,
+      "lessons": 2
+    },
+    {
+      "filename": "part4.html",
+      "title": "Section 2 — Part 4: Κανονικοποίηση και έλεγχος υπερπροσαρμογής",
+      "headings": 32,
+      "lessons": 4
+    },
+    {
+      "filename": "part5.html",
+      "title": "Section 2 — Part 5: Πιθανότητες και ταξινόμηση",
+      "headings": 24,
+      "lessons": 3
+    },
+    {
+      "filename": "part6.html",
+      "title": "Section 2 — Part 6: Γραμμικά SVM και μεγιστοποίηση περιθωρίου",
+      "headings": 23,
+      "lessons": 3
+    },
+    {
+      "filename": "part7.html",
+      "title": "Section 2 — Part 7: Μη γραμμικά SVM, kernels και υπολογιστικό κόστος",
+      "headings": 25,
+      "lessons": 3
+    },
+    {
+      "filename": "part8.html",
+      "title": "Section 2 — Part 8: SVR και εφαρμογή των υπαρχουσών ασκήσεων",
+      "headings": 15,
+      "lessons": 2
+    },
+    {
+      "filename": "excercises.html",
+      "title": "Section 2 — Πραγματικές ασκήσεις των κεφαλαίων 4 και 5",
+      "headings": 68,
+      "lessons": 22
+    }
+  ]
+}

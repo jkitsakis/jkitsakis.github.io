@@ -1,0 +1,1 @@
+window.DAMA61_SITE_CONFIG={"narration": {"language_mode": "flow", "language": "el-GR", "english_language": "en-US", "speed": 1.0, "auto_follow": false, "max_chunk_chars": 220}, "navigation": {"scroll_spy": true, "highlight_active_heading": true}};
