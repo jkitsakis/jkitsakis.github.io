@@ -82,3 +82,21 @@ body{overflow-wrap:anywhere} a{color:var(--primary)}
   text-decoration: none !important;
 }
 .toc #toc-items a.toc-current::before { content: '➜ '; color: #1d4ed8; }
+
+/* Quiet source citations: original bibliographic wording is kept, never bold. */
+.article aside.source-note {
+  margin: 1rem 0 1.2rem;
+  padding: .75rem 1rem;
+  border: 1px solid #d9e2e9;
+  border-inline-start: 3px solid #9caebe;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #546274;
+  font-size: .87rem;
+  line-height: 1.55;
+  font-style: italic;
+  font-weight: 400;
+}
+.article aside.source-note p { margin: .16rem 0; font-weight: 400; }
+.article aside.source-note em { font-style: italic; font-weight: 400; }
+.article img { display: block; max-width: 100%; height: auto; margin: 1rem auto; }
